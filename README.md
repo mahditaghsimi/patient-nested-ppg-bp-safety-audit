@@ -60,7 +60,7 @@ The left panel summarizes the complete locked screening distribution. The right 
 
 ### Error across pressure ranges
 
-FINAL/results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.png
+![Distribution of the locked 200-method screening results and fold-specific nested inner selections](FINAL/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
 
 Aggregate MAE conceals a steep increase in error at high SBP and DBP ranges. The dotted line is the overall tail-error reference used in the audit.
 

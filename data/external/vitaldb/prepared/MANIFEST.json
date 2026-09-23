@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "selected_cases": 128,
+  "accepted_cases": 119,
+  "accepted_windows": 2380,
+  "shape": [
+    2380,
+    3,
+    1875
+  ],
+  "sbp_range": [
+    55.0,
+    219.0
+  ],
+  "dbp_range": [
+    29.0,
+    126.0
+  ],
+  "high_bp_prevalence": 0.1689075630252101,
+  "prepared_sha256": "bc8cd689723166e7e1f48cf148268895caaab2129d6feef8520801fa0ba5eddb",
+  "downloaded_bytes": 460121972,
+  "selection_rule": "lowest SHA-256 rank of ICBME2026-vitaldb-sync-v1:<caseid>"
+}

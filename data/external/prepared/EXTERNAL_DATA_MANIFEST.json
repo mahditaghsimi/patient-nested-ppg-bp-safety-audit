@@ -1,0 +1,37 @@
+{
+  "ppg_bp": {
+    "name": "PPG-BP",
+    "path": "/home/asr/mahditaghsimi/maghale/FINAL/data/external/prepared/ppg_bp_219.npz",
+    "subjects": 219,
+    "records": 657,
+    "shape": [
+      657,
+      3,
+      1875
+    ],
+    "original_fs": 1000,
+    "prepared_fs": 125,
+    "original_duration_seconds": 2.1,
+    "padding": "periodic context to 15 s storage with one uninterrupted 2.1 s record centered; only <=2 s evaluation is strictly non-padded",
+    "label_type": "one cuff SBP/DBP pair shared by three short PPG records",
+    "sha256": "1a94083ca9876f626bf489ffaf8ba040ac4fa7b73cb47b6c0074e8f123a22ff4"
+  },
+  "ppg_ambulatory_56": {
+    "name": "PPG-based-BP-assessment",
+    "path": "/home/asr/mahditaghsimi/maghale/FINAL/data/external/prepared/ppg_ambulatory_56.npz",
+    "subjects": 56,
+    "records": 461,
+    "shape": [
+      461,
+      3,
+      1875
+    ],
+    "original_fs": 100,
+    "prepared_fs": 125,
+    "window_seconds": 15,
+    "label_type": "one cuff SBP/DBP pair shared by 7-24 non-overlapping windows per subject (52/56 have eight)",
+    "evaluation_unit": "subject; average all window predictions for each subject before computing metrics",
+    "sha256": "77c40c6043be7f3c8bd14f3114c3b280967cbe93496414f7850c617d62960a8b"
+  },
+  "warning": "These external cuff labels are not simultaneous invasive ABP labels and must be reported as domain-transfer validation, not an interchangeable MIMIC test set."
+}

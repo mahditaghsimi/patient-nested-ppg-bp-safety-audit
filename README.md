@@ -60,7 +60,7 @@ The left panel summarizes the complete locked screening distribution. The right 
 
 ### Error across pressure ranges
 
-![Range-specific SBP and DBP mean absolute errors](FINAL/results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.png)
+FINAL/results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.png
 
 Aggregate MAE conceals a steep increase in error at high SBP and DBP ranges. The dotted line is the overall tail-error reference used in the audit.
 

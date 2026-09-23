@@ -54,7 +54,7 @@ All values above are read from the committed manuscript and result artifacts. Th
 
 ### Locked search and patient-nested selection
 
-![Distribution of the locked 200-method screening results and fold-specific nested inner selections](patient-nested-ppg-bp-safety-audit/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
+![Distribution of the locked 200-method screening results and fold-specific nested inner selections](./results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
 
 The left panel summarizes the complete locked screening distribution. The right panel shows the independently selected inner score for each held-out outer fold.
 

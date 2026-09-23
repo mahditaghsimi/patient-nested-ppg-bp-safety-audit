@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taqsim-ppg-bp-audit"
+version = "1.0.0"
+description = "Auditable patient-separated PPG-based blood-pressure estimation and external safety evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["pipeline*", "phase2*", "features*", "neural*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

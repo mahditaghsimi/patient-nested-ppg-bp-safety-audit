@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this research package, cite the manuscript and replace the contributor placeholder after de-anonymization."
+title: "Patient-Nested Selection and Cross-Domain Safety Audit of PPG-Only Blood-Pressure Estimation"
+type: software
+version: 1.0.0
+date-released: 2026-08-21
+authors:
+  - name: "Taqsim Project Contributors"
+keywords:
+  - photoplethysmography
+  - blood pressure estimation
+  - external validation
+  - clinical safety audit

@@ -1,0 +1,33 @@
+seed: 42
+sampling_rate: 125
+data_dir: data/mimic_bp/raw/ppg
+labels_dir: data/mimic_bp/raw/labels
+split_path: data/mimic_bp/splits/official_patient_split.json
+forecast_checkpoint: data/pretraining/forecast_encoder_best_model.pt
+
+features:
+  cache_path: outputs/features/feature_cache.npz
+  schema_path: outputs/features/feature_schema.json
+  preprocessors: [raw, bandpass, detrend_bandpass, robust, bandpass_robust]
+  families: [statistics, spectral, derivative, pulse, fusion]
+
+screening:
+  train_patients: 320
+  n_jobs: 12
+  batch_size: 20
+  results_path: outputs/screening/results_200.csv
+  registry_path: outputs/screening/registry_200.json
+
+finalists:
+  top_k: 12
+  diversity_per_regressor: 1
+
+neural:
+  batch_size: 128
+  num_workers: 4
+  epochs_screen: 8
+  epochs_final: 24
+  patience: 4
+  learning_rate_head: 0.001
+  learning_rate_encoder: 0.0001
+  weight_decay: 0.0002

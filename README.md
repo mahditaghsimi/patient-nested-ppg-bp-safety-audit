@@ -1,3 +1,131 @@
+# Patient-Nested Model Selection and Cross-Domain Safety Audit of PPG-Only Blood-Pressure Estimation
+
+<p align="center">
+  <b>An auditable, patient-separated evaluation pipeline for PPG-based systolic and diastolic blood-pressure estimation</b>
+</p>
+
+<p align="center">
+  <a href="1537___37976.pdf">Paper</a> ·
+  <a href="FINAL/results/tables/">Result tables</a> ·
+  <a href="FINAL/results/figures/">Figures</a> ·
+  <a href="FINAL/docs/REPRODUCIBILITY.md">Reproducibility protocol</a> ·
+  <a href="FINAL/README_FA.md">راهنمای فارسی</a>
+</p>
+
+> **Research-use warning**  
+> This repository reports retrospective experiments. It is not a medical device and must not be used for diagnosis, treatment, or patient monitoring.
+
+## Overview
+
+Cuffless blood-pressure estimation from photoplethysmography (PPG) is often summarized using a single average error. That number can hide subject leakage, regression toward the cohort mean, weak performance at clinically important pressure extremes, and failure under domain shift.
+
+This repository accompanies the paper **“Patient-Nested Model Selection and Cross-Domain Safety Audit of PPG-Only Blood-Pressure Estimation.”** It provides the code, locked experiment registries, audit artifacts, result tables, and publication figures for:
+
+- a locked search over **200 model configurations**;
+- five-fold, patient-nested evaluation with **1,005 inner fits**;
+- duplicate-aware analysis of **1,524 MIMIC-BP subjects** and **45,689 retained segments**;
+- pressure-range and high-blood-pressure safety audits;
+- zero-shot and supervised cross-fitted evaluation on **119 VitalDB patients** and **2,380 synchronized windows**; and
+- secondary transfer analyses on cuff-labelled PPG datasets.
+
+The central finding is deliberately cautious: patient-nested selection improved on a fold-specific training mean, but did not outperform the historical prior, and its errors increased sharply at pressure extremes and under external zero-shot transfer.
+
+## Main results
+
+| Evaluation | SBP MAE | DBP MAE | Interpretation |
+|---|---:|---:|---|
+| MIMIC-BP, patient-nested selected procedure | **13.08 mmHg** | **8.35 mmHg** | Primary internal estimate |
+| MIMIC-BP, historical fixed prior | 13.10 mmHg | 8.32 mmHg | Statistically indistinguishable from the selected procedure (`p = 0.376`) |
+| MIMIC-BP, outer-training-fold mean | 14.38 mmHg | 9.63 mmHg | Simple fold-specific baseline |
+| VitalDB, model zero-shot | 18.39 mmHg | 11.29 mmHg | Worse than the source-training mean |
+| VitalDB, source-training mean | 17.85 mmHg | 10.45 mmHg | Calibration-free baseline |
+| VitalDB, supervised affine cross-fit | 16.48 mmHg | 9.25 mmHg | Uses destination-domain labels |
+
+Additional safety findings:
+
+- direct high-BP sensitivity was **0.50%** at **99.98% specificity**;
+- high-BP segments had an SBP/DBP MAE of **29.79/17.70 mmHg**;
+- zero-shot VitalDB bias was **-11.21/-8.21 mmHg** for SBP/DBP; and
+- the model strongly regressed toward central pressure values, producing much larger errors at the extremes.
+
+All values above are read from the committed manuscript and result artifacts. The detailed source tables are available in [`FINAL/results/tables/`](FINAL/results/tables/).
+
+## Figures
+
+### Locked search and patient-nested selection
+
+![Distribution of the locked 200-method screening results and fold-specific nested inner selections](FINAL/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
+
+The left panel summarizes the complete locked screening distribution. The right panel shows the independently selected inner score for each held-out outer fold.
+
+### Error across pressure ranges
+
+![Range-specific SBP and DBP mean absolute errors](FINAL/results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.png)
+
+Aggregate MAE conceals a steep increase in error at high SBP and DBP ranges. The dotted line is the overall tail-error reference used in the audit.
+
+### Bland-Altman analysis
+
+![Bland-Altman plots for patient-nested MIMIC-BP and zero-shot VitalDB predictions](FINAL/results/figures/FIGURE_1_BLAND_ALTMAN.png)
+
+The plots expose pressure-dependent error and the negative bias observed during zero-shot VitalDB transfer.
+
+### External calibration stress test
+
+![VitalDB reference-versus-prediction plots before and after supervised affine adaptation](FINAL/results/figures/FIGURE_2_VITALDB_CALIBRATION.png)
+
+Supervised affine cross-fitting corrects location and scale, but the shallow slopes indicate limited tracking of between-window pressure variation.
+
+## Study design
+
+```mermaid
+flowchart LR
+    A[PPG signals and BP labels] --> B[Duplicate and leakage audit]
+    B --> C[Patient-disjoint data partitions]
+    C --> D[Locked 200-configuration search]
+    D --> E[Five-fold patient-nested selection]
+    E --> F[Internal OOF evaluation]
+    F --> G[Range and event-safety audit]
+    F --> H[Zero-shot external evaluation]
+    H --> I[Supervised cross-fitted adaptation]
+    G --> J[Tables, figures, claims, and audit artifacts]
+    I --> J
+```
+
+The official MIMIC-BP split contains 1,100 training, 195 validation, and 229 test subjects. Development screening excludes the official test partition. In the primary analysis, model selection is repeated inside every outer training fold, with zero patient overlap at both levels and exactly one outer-fold prediction for each retained segment.
+
+## Model search space
+
+The locked registry covers convolutional, residual, recurrent, Transformer, morphology-aware, multiscale, temporal-spectral, and foundation-model variants. It also evaluates:
+
+- raw, filtered, detrended, robust-scaled, derivative, and multiview inputs;
+- statistical, spectral, derivative, pulse, and fused engineered features;
+- robust regression, concordance, asymmetric high-BP, tail-weighted, and physiological multitask objectives; and
+- multiple training and augmentation strategies.
+
+The registered search definitions are stored in [`FINAL/phase2/protocol/`](FINAL/phase2/protocol/). The complete 200-method results and all 1,005 nested inner fits are included under [`FINAL/results/tables/`](FINAL/results/tables/).
+
+## Repository layout
+
+```text
+.
+├── 1537___37976.pdf          # article manuscript
+├── README.md                 # this file
+└── FINAL/
+    ├── main.py               # single pipeline entry point
+    ├── config.yaml           # paths and core experiment settings
+    ├── pipeline/             # staged runner, logging, and resume state
+    ├── features/             # signal preprocessing and engineered features
+    ├── neural/               # waveform cache and transfer model code
+    ├── phase2/               # model search, nested CV, safety, and transfer
+    ├── scripts/              # audits, tables, figures, and paper builders
+    ├── tests/                # repository contracts
+    ├── results/
+    │   ├── tables/           # publication and supplementary CSV tables
+    │   └── figures/          # publication figures in PNG and PDF
+    ├── artifacts/            # manifests and audit records
+    ├── docs/                 # code scope and reproducibility notes
+    ├── data/                 # local data layout and manifests
     └── vendor/papagei/       # required upstream PaPaGei code and license
 ```
 

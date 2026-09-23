@@ -1,0 +1,7 @@
+{
+  "baseline": "resnet_multiview10__physio_multitask_aug",
+  "best_clinical_score_candidate": "resnet_multiview10__physio_multitask_aug",
+  "mean_mae_improvement_mmHg": 0.0,
+  "confirmed_primary_improvement": false,
+  "paper_policy": "update primary model claim only if confirmed_primary_improvement is true; otherwise retain existing model and report medical audit as secondary analysis"
+}

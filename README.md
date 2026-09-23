@@ -54,25 +54,25 @@ All values above are read from the committed manuscript and result artifacts. Th
 
 ### Locked search and patient-nested selection
 
-![Distribution of the locked 200-method screening results and fold-specific nested inner selections](FINAL/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
+![Distribution of the locked 200-method screening results and fold-specific nested inner selections](patient-nested-ppg-bp-safety-audit/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
 
 The left panel summarizes the complete locked screening distribution. The right panel shows the independently selected inner score for each held-out outer fold.
 
 ### Error across pressure ranges
 
-![Distribution of the locked 200-method screening results and fold-specific nested inner selections](FINAL/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
+![Distribution of the locked 200-method screening results and fold-specific nested inner selections](patient-nested-ppg-bp-safety-audit/results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png)
 
 Aggregate MAE conceals a steep increase in error at high SBP and DBP ranges. The dotted line is the overall tail-error reference used in the audit.
 
 ### Bland-Altman analysis
 
-![Bland-Altman plots for patient-nested MIMIC-BP and zero-shot VitalDB predictions](FINAL/results/figures/FIGURE_1_BLAND_ALTMAN.png)
+![Bland-Altman plots for patient-nested MIMIC-BP and zero-shot VitalDB predictions](patient-nested-ppg-bp-safety-audit/results/figures/FIGURE_1_BLAND_ALTMAN.png)
 
 The plots expose pressure-dependent error and the negative bias observed during zero-shot VitalDB transfer.
 
 ### External calibration stress test
 
-![VitalDB reference-versus-prediction plots before and after supervised affine adaptation](FINAL/results/figures/FIGURE_2_VITALDB_CALIBRATION.png)
+![VitalDB reference-versus-prediction plots before and after supervised affine adaptation](patient-nested-ppg-bp-safety-audit/results/figures/FIGURE_2_VITALDB_CALIBRATION.png)
 
 Supervised affine cross-fitting corrects location and scale, but the shallow slopes indicate limited tracking of between-window pressure variation.
 

@@ -1,0 +1,356 @@
+{
+  "schema_version": "1.0",
+  "runs": [
+    {
+      "started_utc": "2026-09-11T10:41:17.818648+00:00",
+      "mode": "all",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24",
+      "status": "FAIL",
+      "finished_utc": "2026-09-11T10:41:17.839182+00:00",
+      "error": "RuntimeError('Stage check_inputs failed with exit code 2; see /home/asr/mahditaghsimi/maghale/FINAL/logs/check_inputs.log')"
+    },
+    {
+      "started_utc": "2026-09-11T10:47:12.771751+00:00",
+      "mode": "all",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24",
+      "status": "FAIL",
+      "finished_utc": "2026-09-11T12:03:57.422698+00:00",
+      "error": "RuntimeError('Stage clinical_analysis exited successfully but its output contract failed')"
+    },
+    {
+      "started_utc": "2026-09-11T12:19:30.034424+00:00",
+      "mode": "all",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919",
+      "status": "FAIL",
+      "finished_utc": "2026-09-11T13:04:50.457072+00:00",
+      "error": "RuntimeError('Stage innovation_finalize failed with exit code 1; see /home/asr/mahditaghsimi/maghale/FINAL/logs/innovation_finalize.log')"
+    },
+    {
+      "started_utc": "2026-09-11T13:12:20.846489+00:00",
+      "mode": "all",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    {
+      "started_utc": "2026-09-11T16:06:59.040824+00:00",
+      "mode": "all",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07",
+      "status": "FAIL",
+      "finished_utc": "2026-09-11T18:21:46.318611+00:00",
+      "error": "RuntimeError('Stage paper failed with exit code 1; see /home/asr/mahditaghsimi/maghale/FINAL/logs/paper.log')"
+    }
+  ],
+  "stages": {
+    "check_inputs": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:47:12.792594+00:00",
+      "seconds": 0.021,
+      "script": "scripts/check_inputs.py",
+      "args": [],
+      "log": "logs/check_inputs.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "official_split": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:47:14.556977+00:00",
+      "seconds": 1.764,
+      "script": "scripts/build_official_split.py",
+      "args": [],
+      "log": "logs/official_split.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "feature_cache": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:48:59.987583+00:00",
+      "seconds": 105.43,
+      "script": "features/build_feature_cache.py",
+      "args": [],
+      "log": "logs/feature_cache.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "waveform_cache": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:49:09.467223+00:00",
+      "seconds": 9.479,
+      "script": "neural/build_input_cache.py",
+      "args": [],
+      "log": "logs/waveform_cache.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "external_cuff_prepare": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:49:10.890132+00:00",
+      "seconds": 1.423,
+      "script": "phase2/prepare_external.py",
+      "args": [],
+      "log": "logs/external_cuff_prepare.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "vitaldb_prepare": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:55:04.528428+00:00",
+      "seconds": 353.638,
+      "script": "phase2/prepare_vitaldb_synchronized_external.py",
+      "args": [],
+      "log": "logs/vitaldb_prepare.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "clinical_sqi": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:55:06.890298+00:00",
+      "seconds": 2.362,
+      "script": "phase2/build_clinical_sqi.py",
+      "args": [],
+      "log": "logs/clinical_sqi.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "leakage_pre": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:55:08.544918+00:00",
+      "seconds": 1.654,
+      "script": "scripts/audit_leakage.py",
+      "args": [
+        "--stage",
+        "pre"
+      ],
+      "log": "logs/leakage_pre.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "pilot_protocol": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T10:55:08.564093+00:00",
+      "seconds": 0.019,
+      "script": "phase2/registry.py",
+      "args": [],
+      "log": "logs/pilot_protocol.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "pilot_search": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:20:24.799283+00:00",
+      "seconds": 1516.235,
+      "script": "phase2/run_search.py",
+      "args": [],
+      "log": "logs/pilot_search.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "foundation": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:23:24.489212+00:00",
+      "seconds": 179.69,
+      "script": "phase2/run_foundation_adaptation.py",
+      "args": [],
+      "log": "logs/foundation.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "pilot_confirmation": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:33:16.155446+00:00",
+      "seconds": 591.666,
+      "script": "phase2/run_confirmation_cv.py",
+      "args": [],
+      "log": "logs/pilot_confirmation.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "pilot_analysis": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:33:27.052938+00:00",
+      "seconds": 10.897,
+      "script": "phase2/analyze_confirmation.py",
+      "args": [],
+      "log": "logs/pilot_analysis.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "cuff_external_models": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:43:08.192009+00:00",
+      "seconds": 581.139,
+      "script": "phase2/run_external_validation.py",
+      "args": [],
+      "log": "logs/cuff_external_models.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "cuff_external_calibration": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:43:08.874630+00:00",
+      "seconds": 0.682,
+      "script": "phase2/analyze_external_calibration.py",
+      "args": [],
+      "log": "logs/cuff_external_calibration.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "clinical_protocol": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:43:08.901157+00:00",
+      "seconds": 0.026,
+      "script": "phase2/icbme_clinical_registry.py",
+      "args": [],
+      "log": "logs/clinical_protocol.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "clinical_search": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T11:57:40.551943+00:00",
+      "seconds": 871.651,
+      "script": "phase2/run_icbme_clinical_search.py",
+      "args": [],
+      "log": "logs/clinical_search.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "clinical_confirmation": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:03:45.432551+00:00",
+      "seconds": 364.88,
+      "script": "phase2/run_icbme_clinical_confirmation.py",
+      "args": [],
+      "log": "logs/clinical_confirmation.log",
+      "fingerprint": "f75f58c092f6b8df2674f9df0308d434a2aee9d1d6bc38538e340f0b80958b24"
+    },
+    "clinical_analysis": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:19:41.874235+00:00",
+      "seconds": 11.84,
+      "script": "phase2/analyze_icbme_clinical_results.py",
+      "args": [],
+      "log": "logs/clinical_analysis.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "event_search": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:23:02.300341+00:00",
+      "seconds": 200.426,
+      "script": "phase2/run_icbme_event_search.py",
+      "args": [],
+      "log": "logs/event_search.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "event_safety": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:23:03.519893+00:00",
+      "seconds": 1.219,
+      "script": "phase2/analyze_icbme_medical_safety.py",
+      "args": [],
+      "log": "logs/event_safety.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_protocol": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:23:03.545261+00:00",
+      "seconds": 0.025,
+      "script": "phase2/innovation200_registry.py",
+      "args": [],
+      "log": "logs/innovation_protocol.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_reference": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:23:11.902368+00:00",
+      "seconds": 8.357,
+      "script": "phase2/run_innovation200_reference.py",
+      "args": [],
+      "log": "logs/innovation_reference.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_search": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:53:52.168833+00:00",
+      "seconds": 1840.266,
+      "script": "phase2/run_innovation200_search.py",
+      "args": [],
+      "log": "logs/innovation_search.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_screen_analysis": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:53:52.416154+00:00",
+      "seconds": 0.247,
+      "script": "phase2/analyze_innovation200_screening.py",
+      "args": [],
+      "log": "logs/innovation_screen_analysis.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_freeze": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T12:53:52.659198+00:00",
+      "seconds": 0.242,
+      "script": "phase2/select_innovation200_finalists.py",
+      "args": [],
+      "log": "logs/innovation_freeze.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_confirmation": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T13:04:38.872807+00:00",
+      "seconds": 646.213,
+      "script": "phase2/run_innovation200_confirmation.py",
+      "args": [],
+      "log": "logs/innovation_confirmation.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "innovation_analysis": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T13:04:50.212925+00:00",
+      "seconds": 11.34,
+      "script": "phase2/analyze_innovation200_confirmation.py",
+      "args": [],
+      "log": "logs/innovation_analysis.log",
+      "fingerprint": "ca89f88f336934873c1bf43540f1085d98ae673623d48d8346276c90a0bd5919"
+    },
+    "vitaldb_external": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T13:12:24.076351+00:00",
+      "seconds": 3.23,
+      "script": "phase2/evaluate_innovation200_vitaldb.py",
+      "args": [],
+      "log": "logs/vitaldb_external.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    "innovation_finalize": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T13:12:24.339942+00:00",
+      "seconds": 0.263,
+      "script": "phase2/finalize_innovation200.py",
+      "args": [],
+      "log": "logs/innovation_finalize.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    "nested_200": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T18:21:22.963298+00:00",
+      "seconds": 8063.922,
+      "script": "phase2/run_nested200_cv.py",
+      "args": [],
+      "log": "logs/nested_200.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    "leakage_post": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T18:21:40.963386+00:00",
+      "seconds": 17.997,
+      "script": "scripts/audit_leakage.py",
+      "args": [
+        "--stage",
+        "post"
+      ],
+      "log": "logs/leakage_post.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    "data_manifest": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T18:21:42.848490+00:00",
+      "seconds": 1.885,
+      "script": "scripts/build_data_manifest.py",
+      "args": [],
+      "log": "logs/data_manifest.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    },
+    "tables_figures": {
+      "status": "PASS",
+      "finished_utc": "2026-09-11T18:21:46.023096+00:00",
+      "seconds": 3.174,
+      "script": "scripts/build_final_tables_figures.py",
+      "args": [],
+      "log": "logs/tables_figures.log",
+      "fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07"
+    }
+  }
+}

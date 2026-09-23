@@ -1,0 +1,24 @@
+
+--- 2026-09-11T12:53:52.169216+00:00 ---
+/home/asr/mahditaghsimi/maghale/FINAL/phase2/reports/INNOVATION200_SCREENING_REPORT_FA.md
+                   run_id                  innovation_label   mae_sbp  mae_dbp  mean_mae  delta_mean_vs_reference
+I200_TRAIN_003_7a8882a0ec      adamw_3e4_cos_amplitude_warp 12.908525 8.434204 10.671365                -0.172685
+I200_TRAIN_024_118fc735bf     radam_6e4_compound_morphology 12.938338 8.423190 10.680764                -0.163285
+I200_TRAIN_022_55c81c0027                    radam_6e4_mask 12.920348 8.440070 10.680209                -0.163840
+I200_TRAIN_027_6e03009c45      radam_1e3_cos_amplitude_warp 12.957149 8.431778 10.694464                -0.149586
+I200_TRAIN_023_92f2c0f793          radam_6e4_amplitude_warp 12.966234 8.435909 10.701072                -0.142978
+I200_TRAIN_025_5e9c83d41d                radam_1e3_cos_none 12.932610 8.464326 10.698467                -0.145582
+I200_TRAIN_002_f0d192a0e6                adamw_3e4_cos_mask 12.952435 8.451580 10.702007                -0.142042
+I200_TRAIN_028_924119312a radam_1e3_cos_compound_morphology 12.926919 8.471102 10.699011                -0.145039
+I200_TRAIN_004_ea1cf9350e adamw_3e4_cos_compound_morphology 12.926139 8.471934 10.699037                -0.145013
+I200_TRAIN_001_e869218e48                adamw_3e4_cos_none 12.932609 8.468201 10.700405                -0.143644
+I200_TRAIN_021_a4bcb0138f                    radam_6e4_none 12.943795 8.462337 10.703066                -0.140984
+I200_TRAIN_026_2e90055abd                radam_1e3_cos_mask 12.955597 8.456834 10.706215                -0.137835
+ I200_ARCH_073_f3d457acb9        convtransformer_w64_p15_d1 12.896560 8.526819 10.711689                -0.132360
+ I200_ARCH_051_79a6655a84      morphology_w64_eca_attention 12.985273 8.492429 10.738852                -0.105198
+I200_TRAIN_009_527a78f50d                adamw_6e4_cos_none 13.007633 8.478165 10.742899                -0.101151
+ I200_ARCH_077_be22171213        convtransformer_w96_p15_d1 13.062240 8.446906 10.754573                -0.089477
+I200_INPUT_029_742823fdbc           multiview_10s_rawfusion 13.018161 8.489470 10.753816                -0.090234
+ I200_ARCH_078_11203ead88        convtransformer_w96_p15_d2 12.988981 8.519968 10.754475                -0.089575
+ I200_ARCH_015_ca1ee0e1e3          adaptive_w96_d6_se_stats 12.986588 8.522650 10.754619                -0.089431
+ I200_ARCH_067_5a41f58e2b               longconv_w64_d6_k15 12.963692 8.540160 10.751926                -0.092123

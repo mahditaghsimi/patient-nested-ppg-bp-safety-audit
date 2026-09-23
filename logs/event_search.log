@@ -1,0 +1,191 @@
+
+--- 2026-09-11T12:19:41.874655+00:00 ---
+[1/36] EVENT_001_resnet_ppg5_306c1241
+EVENT_001_resnet_ppg5_306c1241 epoch=1 AP_high=0.1163 AP_MAPlow=0.2410 score=0.1600
+EVENT_001_resnet_ppg5_306c1241 epoch=2 AP_high=0.1176 AP_MAPlow=0.2734 score=0.1722
+EVENT_001_resnet_ppg5_306c1241 epoch=3 AP_high=0.1502 AP_MAPlow=0.3278 score=0.2124
+EVENT_001_resnet_ppg5_306c1241 epoch=4 AP_high=0.1462 AP_MAPlow=0.3399 score=0.2140
+EVENT_001_resnet_ppg5_306c1241 epoch=5 AP_high=0.1660 AP_MAPlow=0.3398 score=0.2268
+EVENT_001_resnet_ppg5_306c1241 epoch=6 AP_high=0.1708 AP_MAPlow=0.3333 score=0.2277
+[2/36] EVENT_002_resnet_deriv5_9ffe6217
+EVENT_002_resnet_deriv5_9ffe6217 epoch=1 AP_high=0.1521 AP_MAPlow=0.3237 score=0.2122
+EVENT_002_resnet_deriv5_9ffe6217 epoch=2 AP_high=0.1556 AP_MAPlow=0.3417 score=0.2207
+EVENT_002_resnet_deriv5_9ffe6217 epoch=3 AP_high=0.1547 AP_MAPlow=0.3229 score=0.2136
+EVENT_002_resnet_deriv5_9ffe6217 epoch=4 AP_high=0.1642 AP_MAPlow=0.3471 score=0.2282
+EVENT_002_resnet_deriv5_9ffe6217 epoch=5 AP_high=0.1546 AP_MAPlow=0.3260 score=0.2146
+EVENT_002_resnet_deriv5_9ffe6217 epoch=6 AP_high=0.1675 AP_MAPlow=0.3389 score=0.2275
+[3/36] EVENT_003_resnet_multi10_a01517a2
+EVENT_003_resnet_multi10_a01517a2 epoch=1 AP_high=0.1818 AP_MAPlow=0.3395 score=0.2370
+EVENT_003_resnet_multi10_a01517a2 epoch=2 AP_high=0.1567 AP_MAPlow=0.3296 score=0.2172
+EVENT_003_resnet_multi10_a01517a2 epoch=3 AP_high=0.1598 AP_MAPlow=0.3229 score=0.2169
+[4/36] EVENT_004_resnet_deriv15_fbd71c5f
+EVENT_004_resnet_deriv15_fbd71c5f epoch=1 AP_high=0.1522 AP_MAPlow=0.3327 score=0.2154
+EVENT_004_resnet_deriv15_fbd71c5f epoch=2 AP_high=0.1587 AP_MAPlow=0.3423 score=0.2230
+EVENT_004_resnet_deriv15_fbd71c5f epoch=3 AP_high=0.1606 AP_MAPlow=0.3288 score=0.2195
+EVENT_004_resnet_deriv15_fbd71c5f epoch=4 AP_high=0.1723 AP_MAPlow=0.3473 score=0.2335
+EVENT_004_resnet_deriv15_fbd71c5f epoch=5 AP_high=0.1553 AP_MAPlow=0.3217 score=0.2136
+EVENT_004_resnet_deriv15_fbd71c5f epoch=6 AP_high=0.1658 AP_MAPlow=0.3469 score=0.2292
+[5/36] EVENT_005_gated_multi10_26e7a760
+EVENT_005_gated_multi10_26e7a760 epoch=1 AP_high=0.1422 AP_MAPlow=0.3214 score=0.2049
+EVENT_005_gated_multi10_26e7a760 epoch=2 AP_high=0.1430 AP_MAPlow=0.3181 score=0.2043
+EVENT_005_gated_multi10_26e7a760 epoch=3 AP_high=0.1314 AP_MAPlow=0.3262 score=0.1996
+[6/36] EVENT_006_inception_deriv10_860d8286
+EVENT_006_inception_deriv10_860d8286 epoch=1 AP_high=0.1429 AP_MAPlow=0.3332 score=0.2095
+EVENT_006_inception_deriv10_860d8286 epoch=2 AP_high=0.1522 AP_MAPlow=0.3458 score=0.2199
+EVENT_006_inception_deriv10_860d8286 epoch=3 AP_high=0.1547 AP_MAPlow=0.3325 score=0.2169
+EVENT_006_inception_deriv10_860d8286 epoch=4 AP_high=0.1511 AP_MAPlow=0.3344 score=0.2153
+[7/36] EVENT_007_spectral_deriv10_e14fe5ae
+EVENT_007_spectral_deriv10_e14fe5ae epoch=1 AP_high=0.1541 AP_MAPlow=0.3319 score=0.2164
+EVENT_007_spectral_deriv10_e14fe5ae epoch=2 AP_high=0.1568 AP_MAPlow=0.3396 score=0.2208
+EVENT_007_spectral_deriv10_e14fe5ae epoch=3 AP_high=0.1495 AP_MAPlow=0.3394 score=0.2159
+EVENT_007_spectral_deriv10_e14fe5ae epoch=4 AP_high=0.1376 AP_MAPlow=0.3431 score=0.2095
+[8/36] EVENT_008_patch_deriv10_44f8491b
+EVENT_008_patch_deriv10_44f8491b epoch=1 AP_high=0.1585 AP_MAPlow=0.3216 score=0.2156
+EVENT_008_patch_deriv10_44f8491b epoch=2 AP_high=0.1662 AP_MAPlow=0.3247 score=0.2217
+EVENT_008_patch_deriv10_44f8491b epoch=3 AP_high=0.1475 AP_MAPlow=0.3352 score=0.2132
+EVENT_008_patch_deriv10_44f8491b epoch=4 AP_high=0.1571 AP_MAPlow=0.3333 score=0.2188
+[9/36] EVENT_009_multi10_bce_none_47829766
+EVENT_009_multi10_bce_none_47829766 epoch=1 AP_high=0.1739 AP_MAPlow=0.3277 score=0.2277
+EVENT_009_multi10_bce_none_47829766 epoch=2 AP_high=0.1633 AP_MAPlow=0.3322 score=0.2224
+EVENT_009_multi10_bce_none_47829766 epoch=3 AP_high=0.1616 AP_MAPlow=0.3304 score=0.2207
+[10/36] EVENT_010_multi10_bce_sqrt_a01517a2
+EVENT_010_multi10_bce_sqrt_a01517a2 epoch=1 AP_high=0.1818 AP_MAPlow=0.3395 score=0.2370
+EVENT_010_multi10_bce_sqrt_a01517a2 epoch=2 AP_high=0.1567 AP_MAPlow=0.3296 score=0.2172
+EVENT_010_multi10_bce_sqrt_a01517a2 epoch=3 AP_high=0.1598 AP_MAPlow=0.3229 score=0.2169
+[11/36] EVENT_011_multi10_bce_full_5a163fcf
+EVENT_011_multi10_bce_full_5a163fcf epoch=1 AP_high=0.1687 AP_MAPlow=0.3351 score=0.2270
+EVENT_011_multi10_bce_full_5a163fcf epoch=2 AP_high=0.1687 AP_MAPlow=0.3288 score=0.2248
+EVENT_011_multi10_bce_full_5a163fcf epoch=3 AP_high=0.1578 AP_MAPlow=0.3377 score=0.2208
+[12/36] EVENT_012_multi10_focal1_2b700e01
+EVENT_012_multi10_focal1_2b700e01 epoch=1 AP_high=0.1806 AP_MAPlow=0.3453 score=0.2383
+EVENT_012_multi10_focal1_2b700e01 epoch=2 AP_high=0.1584 AP_MAPlow=0.3353 score=0.2203
+EVENT_012_multi10_focal1_2b700e01 epoch=3 AP_high=0.1560 AP_MAPlow=0.3319 score=0.2176
+[13/36] EVENT_013_multi10_focal2_af5be9e9
+EVENT_013_multi10_focal2_af5be9e9 epoch=1 AP_high=0.1638 AP_MAPlow=0.3300 score=0.2220
+EVENT_013_multi10_focal2_af5be9e9 epoch=2 AP_high=0.1717 AP_MAPlow=0.3318 score=0.2277
+EVENT_013_multi10_focal2_af5be9e9 epoch=3 AP_high=0.1692 AP_MAPlow=0.3387 score=0.2285
+EVENT_013_multi10_focal2_af5be9e9 epoch=4 AP_high=0.1519 AP_MAPlow=0.3306 score=0.2144
+EVENT_013_multi10_focal2_af5be9e9 epoch=5 AP_high=0.1568 AP_MAPlow=0.3297 score=0.2173
+[14/36] EVENT_014_multi10_focal3_4c039cef
+EVENT_014_multi10_focal3_4c039cef epoch=1 AP_high=0.1544 AP_MAPlow=0.3236 score=0.2136
+EVENT_014_multi10_focal3_4c039cef epoch=2 AP_high=0.1732 AP_MAPlow=0.3293 score=0.2279
+EVENT_014_multi10_focal3_4c039cef epoch=3 AP_high=0.1731 AP_MAPlow=0.3344 score=0.2296
+EVENT_014_multi10_focal3_4c039cef epoch=4 AP_high=0.1495 AP_MAPlow=0.3332 score=0.2138
+EVENT_014_multi10_focal3_4c039cef epoch=5 AP_high=0.1545 AP_MAPlow=0.3266 score=0.2147
+[15/36] EVENT_015_multi10_joint10_e880de64
+EVENT_015_multi10_joint10_e880de64 epoch=1 AP_high=0.1785 AP_MAPlow=0.3380 score=0.2343
+EVENT_015_multi10_joint10_e880de64 epoch=2 AP_high=0.1552 AP_MAPlow=0.3295 score=0.2162
+EVENT_015_multi10_joint10_e880de64 epoch=3 AP_high=0.1518 AP_MAPlow=0.3214 score=0.2111
+[16/36] EVENT_016_multi10_joint25_70a0090b
+EVENT_016_multi10_joint25_70a0090b epoch=1 AP_high=0.1698 AP_MAPlow=0.3402 score=0.2294
+EVENT_016_multi10_joint25_70a0090b epoch=2 AP_high=0.1572 AP_MAPlow=0.3221 score=0.2149
+EVENT_016_multi10_joint25_70a0090b epoch=3 AP_high=0.1513 AP_MAPlow=0.3241 score=0.2118
+[17/36] EVENT_017_multi10_joint50_cea79d2a
+EVENT_017_multi10_joint50_cea79d2a epoch=1 AP_high=0.1832 AP_MAPlow=0.3381 score=0.2374
+EVENT_017_multi10_joint50_cea79d2a epoch=2 AP_high=0.1588 AP_MAPlow=0.3251 score=0.2170
+EVENT_017_multi10_joint50_cea79d2a epoch=3 AP_high=0.1531 AP_MAPlow=0.3295 score=0.2149
+[18/36] EVENT_018_multi10_sample_combo_f884a788
+EVENT_018_multi10_sample_combo_f884a788 epoch=1 AP_high=0.1485 AP_MAPlow=0.3226 score=0.2094
+EVENT_018_multi10_sample_combo_f884a788 epoch=2 AP_high=0.1393 AP_MAPlow=0.3165 score=0.2013
+EVENT_018_multi10_sample_combo_f884a788 epoch=3 AP_high=0.1396 AP_MAPlow=0.3268 score=0.2051
+[19/36] EVENT_019_deriv5_bce_none_a73a0ab2
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=1 AP_high=0.1370 AP_MAPlow=0.3070 score=0.1965
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=2 AP_high=0.1518 AP_MAPlow=0.3201 score=0.2107
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=3 AP_high=0.1425 AP_MAPlow=0.3037 score=0.1989
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=4 AP_high=0.1565 AP_MAPlow=0.3310 score=0.2176
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=5 AP_high=0.1480 AP_MAPlow=0.3155 score=0.2067
+EVENT_019_deriv5_bce_none_a73a0ab2 epoch=6 AP_high=0.1548 AP_MAPlow=0.3264 score=0.2148
+[20/36] EVENT_020_deriv5_bce_sqrt_9ffe6217
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=1 AP_high=0.1521 AP_MAPlow=0.3237 score=0.2122
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=2 AP_high=0.1556 AP_MAPlow=0.3417 score=0.2207
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=3 AP_high=0.1547 AP_MAPlow=0.3229 score=0.2136
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=4 AP_high=0.1642 AP_MAPlow=0.3471 score=0.2282
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=5 AP_high=0.1546 AP_MAPlow=0.3260 score=0.2146
+EVENT_020_deriv5_bce_sqrt_9ffe6217 epoch=6 AP_high=0.1675 AP_MAPlow=0.3389 score=0.2275
+[21/36] EVENT_021_deriv5_bce_full_1135042d
+EVENT_021_deriv5_bce_full_1135042d epoch=1 AP_high=0.1687 AP_MAPlow=0.3331 score=0.2263
+EVENT_021_deriv5_bce_full_1135042d epoch=2 AP_high=0.1518 AP_MAPlow=0.3381 score=0.2170
+EVENT_021_deriv5_bce_full_1135042d epoch=3 AP_high=0.1551 AP_MAPlow=0.3334 score=0.2175
+[22/36] EVENT_022_deriv5_focal1_b2f48b31
+EVENT_022_deriv5_focal1_b2f48b31 epoch=1 AP_high=0.1361 AP_MAPlow=0.3213 score=0.2009
+EVENT_022_deriv5_focal1_b2f48b31 epoch=2 AP_high=0.1599 AP_MAPlow=0.3425 score=0.2238
+EVENT_022_deriv5_focal1_b2f48b31 epoch=3 AP_high=0.1546 AP_MAPlow=0.3195 score=0.2123
+EVENT_022_deriv5_focal1_b2f48b31 epoch=4 AP_high=0.1621 AP_MAPlow=0.3343 score=0.2224
+[23/36] EVENT_023_deriv5_focal2_2c5a7ccf
+EVENT_023_deriv5_focal2_2c5a7ccf epoch=1 AP_high=0.1628 AP_MAPlow=0.3292 score=0.2211
+EVENT_023_deriv5_focal2_2c5a7ccf epoch=2 AP_high=0.1542 AP_MAPlow=0.3362 score=0.2179
+EVENT_023_deriv5_focal2_2c5a7ccf epoch=3 AP_high=0.1467 AP_MAPlow=0.3246 score=0.2089
+[24/36] EVENT_024_deriv5_focal3_bdf3a6d9
+EVENT_024_deriv5_focal3_bdf3a6d9 epoch=1 AP_high=0.1629 AP_MAPlow=0.3228 score=0.2189
+EVENT_024_deriv5_focal3_bdf3a6d9 epoch=2 AP_high=0.1520 AP_MAPlow=0.3378 score=0.2171
+EVENT_024_deriv5_focal3_bdf3a6d9 epoch=3 AP_high=0.1471 AP_MAPlow=0.3309 score=0.2114
+[25/36] EVENT_025_deriv5_joint10_b5913cfd
+EVENT_025_deriv5_joint10_b5913cfd epoch=1 AP_high=0.1635 AP_MAPlow=0.3202 score=0.2183
+EVENT_025_deriv5_joint10_b5913cfd epoch=2 AP_high=0.1636 AP_MAPlow=0.3396 score=0.2252
+EVENT_025_deriv5_joint10_b5913cfd epoch=3 AP_high=0.1560 AP_MAPlow=0.3261 score=0.2155
+EVENT_025_deriv5_joint10_b5913cfd epoch=4 AP_high=0.1666 AP_MAPlow=0.3461 score=0.2294
+EVENT_025_deriv5_joint10_b5913cfd epoch=5 AP_high=0.1561 AP_MAPlow=0.3188 score=0.2131
+EVENT_025_deriv5_joint10_b5913cfd epoch=6 AP_high=0.1663 AP_MAPlow=0.3397 score=0.2270
+[26/36] EVENT_026_deriv5_joint25_86a49daa
+EVENT_026_deriv5_joint25_86a49daa epoch=1 AP_high=0.1633 AP_MAPlow=0.3287 score=0.2212
+EVENT_026_deriv5_joint25_86a49daa epoch=2 AP_high=0.1607 AP_MAPlow=0.3382 score=0.2228
+EVENT_026_deriv5_joint25_86a49daa epoch=3 AP_high=0.1577 AP_MAPlow=0.3301 score=0.2181
+EVENT_026_deriv5_joint25_86a49daa epoch=4 AP_high=0.1572 AP_MAPlow=0.3448 score=0.2229
+EVENT_026_deriv5_joint25_86a49daa epoch=5 AP_high=0.1549 AP_MAPlow=0.3305 score=0.2164
+EVENT_026_deriv5_joint25_86a49daa epoch=6 AP_high=0.1626 AP_MAPlow=0.3397 score=0.2246
+[27/36] EVENT_027_deriv5_joint50_703923a9
+EVENT_027_deriv5_joint50_703923a9 epoch=1 AP_high=0.1696 AP_MAPlow=0.3313 score=0.2262
+EVENT_027_deriv5_joint50_703923a9 epoch=2 AP_high=0.1624 AP_MAPlow=0.3370 score=0.2235
+EVENT_027_deriv5_joint50_703923a9 epoch=3 AP_high=0.1507 AP_MAPlow=0.3349 score=0.2152
+[28/36] EVENT_028_deriv5_sample_combo_d654954f
+EVENT_028_deriv5_sample_combo_d654954f epoch=1 AP_high=0.1645 AP_MAPlow=0.3255 score=0.2209
+EVENT_028_deriv5_sample_combo_d654954f epoch=2 AP_high=0.1588 AP_MAPlow=0.3194 score=0.2150
+EVENT_028_deriv5_sample_combo_d654954f epoch=3 AP_high=0.1442 AP_MAPlow=0.3237 score=0.2070
+[29/36] EVENT_029_aug_jitter_41cfee75
+EVENT_029_aug_jitter_41cfee75 epoch=1 AP_high=0.1709 AP_MAPlow=0.3305 score=0.2267
+EVENT_029_aug_jitter_41cfee75 epoch=2 AP_high=0.1619 AP_MAPlow=0.3308 score=0.2210
+EVENT_029_aug_jitter_41cfee75 epoch=3 AP_high=0.1526 AP_MAPlow=0.3299 score=0.2147
+[30/36] EVENT_030_aug_mask_e4b5e2e3
+EVENT_030_aug_mask_e4b5e2e3 epoch=1 AP_high=0.1888 AP_MAPlow=0.3296 score=0.2381
+EVENT_030_aug_mask_e4b5e2e3 epoch=2 AP_high=0.1543 AP_MAPlow=0.3259 score=0.2144
+EVENT_030_aug_mask_e4b5e2e3 epoch=3 AP_high=0.1553 AP_MAPlow=0.3300 score=0.2165
+[31/36] EVENT_031_aug_shift_55b31f23
+EVENT_031_aug_shift_55b31f23 epoch=1 AP_high=0.1811 AP_MAPlow=0.3452 score=0.2385
+EVENT_031_aug_shift_55b31f23 epoch=2 AP_high=0.1566 AP_MAPlow=0.3301 score=0.2173
+EVENT_031_aug_shift_55b31f23 epoch=3 AP_high=0.1550 AP_MAPlow=0.3314 score=0.2167
+[32/36] EVENT_032_aug_compound_2427d0a3
+EVENT_032_aug_compound_2427d0a3 epoch=1 AP_high=0.1827 AP_MAPlow=0.3379 score=0.2370
+EVENT_032_aug_compound_2427d0a3 epoch=2 AP_high=0.1524 AP_MAPlow=0.3295 score=0.2144
+EVENT_032_aug_compound_2427d0a3 epoch=3 AP_high=0.1480 AP_MAPlow=0.3298 score=0.2116
+[33/36] EVENT_033_drop05_5f3310c4
+EVENT_033_drop05_5f3310c4 epoch=1 AP_high=0.1842 AP_MAPlow=0.3361 score=0.2374
+EVENT_033_drop05_5f3310c4 epoch=2 AP_high=0.1614 AP_MAPlow=0.3320 score=0.2211
+EVENT_033_drop05_5f3310c4 epoch=3 AP_high=0.1571 AP_MAPlow=0.3315 score=0.2181
+[34/36] EVENT_034_drop30_1385d64b
+EVENT_034_drop30_1385d64b epoch=1 AP_high=0.1657 AP_MAPlow=0.3427 score=0.2277
+EVENT_034_drop30_1385d64b epoch=2 AP_high=0.1609 AP_MAPlow=0.3313 score=0.2205
+EVENT_034_drop30_1385d64b epoch=3 AP_high=0.1606 AP_MAPlow=0.3279 score=0.2192
+[35/36] EVENT_035_lr5e4_f0da1d14
+EVENT_035_lr5e4_f0da1d14 epoch=1 AP_high=0.1641 AP_MAPlow=0.3315 score=0.2227
+EVENT_035_lr5e4_f0da1d14 epoch=2 AP_high=0.1504 AP_MAPlow=0.3317 score=0.2139
+EVENT_035_lr5e4_f0da1d14 epoch=3 AP_high=0.1530 AP_MAPlow=0.3345 score=0.2165
+[36/36] EVENT_036_wd1e3_f902101f
+EVENT_036_wd1e3_f902101f epoch=1 AP_high=0.1638 AP_MAPlow=0.3443 score=0.2270
+EVENT_036_wd1e3_f902101f epoch=2 AP_high=0.1558 AP_MAPlow=0.3312 score=0.2172
+EVENT_036_wd1e3_f902101f epoch=3 AP_high=0.1533 AP_MAPlow=0.3227 score=0.2126
+                             run_id  high_auprc  high_auroc  high_sensitivity_at_90spec  map_low_auprc  map_low_auroc  selection_score
+       EVENT_031_aug_shift_55b31f23    0.181051    0.656389                    0.253102       0.345200       0.729662         0.238503
+  EVENT_012_multi10_focal1_2b700e01    0.180622    0.659910                    0.253102       0.345281       0.727222         0.238253
+        EVENT_030_aug_mask_e4b5e2e3    0.188803    0.649176                    0.275434       0.329558       0.717667         0.238067
+ EVENT_017_multi10_joint50_cea79d2a    0.183156    0.658443                    0.270471       0.338123       0.728532         0.237395
+          EVENT_033_drop05_5f3310c4    0.184217    0.665064                    0.267990       0.336073       0.721091         0.237366
+    EVENT_032_aug_compound_2427d0a3    0.182691    0.651592                    0.272953       0.337890       0.726763         0.237011
+EVENT_010_multi10_bce_sqrt_a01517a2    0.181818    0.663478                    0.275434       0.339505       0.724066         0.237008
+  EVENT_003_resnet_multi10_a01517a2    0.181818    0.663478                    0.275434       0.339505       0.724066         0.237008
+ EVENT_015_multi10_joint10_e880de64    0.178452    0.656787                    0.290323       0.338045       0.726139         0.234309
+  EVENT_004_resnet_deriv15_fbd71c5f    0.172314    0.714804                    0.280397       0.347252       0.739887         0.233542
+  EVENT_014_multi10_focal3_4c039cef    0.173113    0.680154                    0.290323       0.334393       0.726947         0.229561
+  EVENT_025_deriv5_joint10_b5913cfd    0.166622    0.704892                    0.265509       0.346115       0.735068         0.229445
+ EVENT_016_multi10_joint25_70a0090b    0.169770    0.661130                    0.267990       0.340189       0.731663         0.229417
+  EVENT_013_multi10_focal2_af5be9e9    0.169166    0.686053                    0.287841       0.338717       0.729873         0.228509
+ EVENT_020_deriv5_bce_sqrt_9ffe6217    0.164188    0.704648                    0.277916       0.347114       0.734648         0.228212

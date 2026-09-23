@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-09-11T16:06:57.669734+00:00",
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "executable": "/home/asr/miniconda3/envs/taghsimivenv/bin/python",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
+  "arguments": [
+    "/home/asr/mahditaghsimi/maghale/FINAL/main.py",
+    "--from-stage",
+    "nested_200"
+  ],
+  "code_fingerprint": "43805b161e20336018479bb97a3fde437e32f535697e9d40c9e85cd6d5bf3c07",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.2",
+    "scipy": "1.16.1",
+    "scikit_learn": "1.6.1",
+    "torch": "2.8.0+cu128"
+  },
+  "cuda": {
+    "available": true,
+    "runtime": "12.8",
+    "device": "NVIDIA GeForce RTX 4090"
+  }
+}

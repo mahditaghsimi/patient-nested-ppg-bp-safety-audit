@@ -1,0 +1,18 @@
+
+--- 2026-09-11T10:55:04.528744+00:00 ---
+{
+  "samples": 45689,
+  "definition": "label-free composite rank: periodicity 45%, physiological spectral concentration 35%, non-flatness 10%, non-spikiness 10%",
+  "train_quality_quantiles": [
+    0.0010403081541880965,
+    0.15468139201402664,
+    0.20587940514087677,
+    0.34042036533355713,
+    0.5109778046607971,
+    0.6571373343467712,
+    0.7754678130149841,
+    0.830759584903717,
+    0.9807649254798889
+  ],
+  "leakage_policy": "quality uses waveform only; percentile reference fitted on train split"
+}

@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0",
+  "stage": "post",
+  "created_utc": "2026-09-11T18:21:40.729409+00:00",
+  "status": "PASS_WITH_DECLARED_LIMITATIONS",
+  "checks": [
+    {
+      "name": "official_split_patient_disjoint",
+      "status": "PASS",
+      "evidence": {
+        "counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "pairwise_overlap": 0,
+        "source_hashes": {
+          "test_subjects.txt": "2ef459231d3415412bb34c95d07a655aa721a684f7fa3749080312f93da71606",
+          "train_subjects.txt": "a67897bdc60357bbf3aa025ccc064375b7de0291f4bfeb807ac514ea1e550a3a",
+          "val_subjects.txt": "5e23107ff3cfd951cbcbb9c205d53ef9c40654145b28e24a20183b7f53650402"
+        }
+      },
+      "consequence": ""
+    },
+    {
+      "name": "historical_split_was_not_official",
+      "status": "CORRECTED",
+      "evidence": {
+        "historical_counts": {
+          "train": 1066,
+          "validation": 229,
+          "test": 229
+        },
+        "official_counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "crosswalk": {
+          "train": {
+            "train": 760,
+            "validation": 142,
+            "test": 164
+          },
+          "validation": {
+            "train": 168,
+            "validation": 27,
+            "test": 34
+          },
+          "test": {
+            "train": 172,
+            "validation": 26,
+            "test": 31
+          }
+        },
+        "historical_test_equals_official_test": false
+      },
+      "consequence": "The old manuscript wording 'original split' was factually wrong; FINAL uses and names the official split."
+    },
+    {
+      "name": "metadata_matches_official_split",
+      "status": "PASS",
+      "evidence": {
+        "segment_counts": {
+          "train": 32971,
+          "validation": 5850,
+          "test": 6868
+        },
+        "patient_counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "mismatched_patients": [],
+        "unique_patient_segment_keys": true,
+        "segments": 45689
+      },
+      "consequence": ""
+    },
+    {
+      "name": "exact_duplicate_policy",
+      "status": "PASS",
+      "evidence": {
+        "duplicate_groups": 30,
+        "excluded_segments": 31,
+        "cross_patient_groups": 1,
+        "excluded_still_retained": [],
+        "all_cross_patient_copies_removed": true,
+        "groups_with_inconsistent_sbp_dbp_labels": [],
+        "definition": "BLAKE2b equality of all 3,750 float samples in the raw 30-s PPG segment"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "central_window_and_local_normalization",
+      "status": "PASS",
+      "evidence": {
+        "audited_samples": 25,
+        "source_samples": [
+          937,
+          2812
+        ],
+        "maximum_float16_difference": 0.0,
+        "fit_scope": "each input window independently; no labels or other patients used"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "engineered_feature_central_window",
+      "status": "PASS",
+      "evidence": {
+        "audited_samples": 12,
+        "maximum_float32_difference": 0.0,
+        "manifest": {
+          "samples": 45689,
+          "source_window": "central 15 s of each 30-s MIMIC-BP segment (samples 937:2812 at 125 Hz)",
+          "feature_scope": "all engineered features are computed from the same central window used by waveform models",
+          "learned_scaling": "not applied in cache; fold-specific mean/SD are fitted in phase2.engine.get_engineered on train indices only"
+        },
+        "fit_scope": "feature extraction per window; scaling later fitted on fold training indices only"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "confirmation_fold_replay",
+      "status": "PASS",
+      "evidence": {
+        "fits": 75,
+        "candidate_seed_sets": 15,
+        "patient_overlap": 0,
+        "each_segment_predicted_once_per_candidate_seed": true,
+        "failures": [],
+        "bad_coverage": {}
+      },
+      "consequence": ""
+    },
+    {
+      "name": "confirmation_selection_independence",
+      "status": "LIMITATION",
+      "evidence": {
+        "patient_separated": true,
+        "fully_nested": false,
+        "reason": "The 200-configuration screening and historical model-family design preceded repeated confirmation CV.",
+        "remedy": "FINAL also runs a separate nested-200 procedural evaluation."
+      },
+      "consequence": "Repeated OOF is descriptive patient-separated confirmation, not a fully independent performance estimate."
+    },
+    {
+      "name": "nested_200_procedural_evaluation",
+      "status": "PASS",
+      "evidence": {
+        "declared": {
+          "status": "PASS",
+          "methods_per_inner_screen": 201,
+          "new_methods": 200,
+          "outer_folds": 5,
+          "inner_fits": 1005,
+          "outer_selected_fits": 5,
+          "outer_historical_prior_fits": 5,
+          "outer_patient_overlap": 0,
+          "inner_outer_test_overlap": 0,
+          "each_segment_predicted_once": true,
+          "outer_seed": 90421,
+          "selection": [
+            {
+              "outer_fold": 1,
+              "candidate_id": "I200_ARCH_074_4c2652ec21",
+              "inner_epoch": 5,
+              "inner_mae_sbp": 12.782797813415527,
+              "inner_mae_dbp": 8.569403648376465,
+              "inner_selection_score": 0.7112189531326294
+            },
+            {
+              "outer_fold": 2,
+              "candidate_id": "I200_ARCH_074_4c2652ec21",
+              "inner_epoch": 5,
+              "inner_mae_sbp": 12.740678787231444,
+              "inner_mae_dbp": 8.443737983703613,
+              "inner_selection_score": 0.7025183439254761
+            },
+            {
+              "outer_fold": 3,
+              "candidate_id": "I200_INPUT_024_29fd0c2123",
+              "inner_epoch": 3,
+              "inner_mae_sbp": 12.774593353271484,
+              "inner_mae_dbp": 8.23293399810791,
+              "inner_selection_score": 0.696931004524231
+            },
+            {
+              "outer_fold": 4,
+              "candidate_id": "I200_TRAIN_016_86ff396d16",
+              "inner_epoch": 2,
+              "inner_mae_sbp": 13.397174835205078,
+              "inner_mae_dbp": 8.138971328735352,
+              "inner_selection_score": 0.703361988067627
+            },
+            {
+              "outer_fold": 5,
+              "candidate_id": "I200_INPUT_037_3faa50799a",
+              "inner_epoch": 2,
+              "inner_mae_sbp": 12.523880958557129,
+              "inner_mae_dbp": 8.233997344970703,
+              "inner_selection_score": 0.6817609071731567
+            }
+          ],
+          "summary": {
+            "nested_selected_procedure": {
+              "mae_sbp": 13.077180862426758,
+              "mae_dbp": 8.346067428588867,
+              "mean_mae": 10.711624145507812,
+              "worst_target_mae": 13.077180862426758,
+              "rmse_sbp": 16.531818389892578,
+              "rmse_dbp": 10.967926025390625,
+              "bias_sbp": -2.3433356285095215,
+              "bias_dbp": -1.1392109394073486,
+              "pearson_sbp": 0.4043401685258321,
+              "pearson_dbp": 0.4575279888923812,
+              "selection_score": 0.7070513963699341,
+              "tail_count": 23018,
+              "tail_mae_sbp": 13.11254596710205,
+              "tail_mae_dbp": 8.445897102355957,
+              "high_count": 3626,
+              "high_mae_sbp": 29.79451560974121,
+              "high_mae_dbp": 17.70262336730957,
+              "low_count": 27699,
+              "low_mae_sbp": 11.341760635375977,
+              "low_mae_dbp": 6.630828380584717,
+              "high_bp_sensitivity": 0.004964147821290678,
+              "high_bp_specificity": 0.999833582958895,
+              "sbp_within_5": 0.23754076473549432,
+              "sbp_within_10": 0.46326249206592396,
+              "sbp_within_15": 0.6490183632821904,
+              "dbp_within_5": 0.3874674429293703,
+              "dbp_within_10": 0.6822648777605113,
+              "dbp_within_15": 0.8552824531068748,
+              "clinical_selection_score": 0.7083172798156738,
+              "error_sd_sbp": 16.365108489990234,
+              "bland_altman_lower_sbp": -34.4189453125,
+              "bland_altman_upper_sbp": 29.732275009155273,
+              "error_sd_dbp": 10.90877628326416,
+              "bland_altman_lower_dbp": -22.52041244506836,
+              "bland_altman_upper_dbp": 20.241989135742188,
+              "patient_macro_mae_sbp": 13.075977325439453,
+              "patient_macro_mae_dbp": 8.346319198608398
+            },
+            "historical_fixed_prior": {
+              "mae_sbp": 13.09819507598877,
+              "mae_dbp": 8.315471649169922,
+              "mean_mae": 10.706832885742188,
+              "worst_target_mae": 13.09819507598877,
+              "rmse_sbp": 16.55742835998535,
+              "rmse_dbp": 10.870942115783691,
+              "bias_sbp": -0.03267146646976471,
+              "bias_dbp": -0.7608009576797485,
+              "pearson_sbp": 0.3909191925936888,
+              "pearson_dbp": 0.4704964794587342,
+              "selection_score": 0.7063926458358765,
+              "tail_count": 23018,
+              "tail_mae_sbp": 13.782240867614746,
+              "tail_mae_dbp": 8.519787788391113,
+              "high_count": 3626,
+              "high_mae_sbp": 27.364561080932617,
+              "high_mae_dbp": 16.80597496032715,
+              "low_count": 27699,
+              "low_mae_sbp": 11.953306198120117,
+              "low_mae_dbp": 6.828282833099365,
+              "high_bp_sensitivity": 0.04081632653061224,
+              "high_bp_specificity": 0.9966003375888548,
+              "sbp_within_5": 0.24016721749217537,
+              "sbp_within_10": 0.4596730066317932,
+              "sbp_within_15": 0.6462605878876754,
+              "dbp_within_5": 0.3867670555275887,
+              "dbp_within_10": 0.6834030072884064,
+              "dbp_within_15": 0.8557420823392939,
+              "clinical_selection_score": 0.7132704854011536,
+              "error_sd_sbp": 16.5576171875,
+              "bland_altman_lower_sbp": -32.48560333251953,
+              "bland_altman_upper_sbp": 32.420257568359375,
+              "error_sd_dbp": 10.844454765319824,
+              "bland_altman_lower_dbp": -22.015932083129883,
+              "bland_altman_upper_dbp": 20.49432945251465,
+              "patient_macro_mae_sbp": 13.095926284790039,
+              "patient_macro_mae_dbp": 8.316085815429688
+            },
+            "outer_fold_training_mean": {
+              "mae_sbp": 14.377991676330566,
+              "mae_dbp": 9.625285148620605,
+              "mean_mae": 12.001638412475586,
+              "worst_target_mae": 14.377991676330566,
+              "rmse_sbp": 17.836074829101562,
+              "rmse_dbp": 12.25929069519043,
+              "bias_sbp": 0.0009331035544164479,
+              "bias_dbp": 0.00017114798538386822,
+              "pearson_sbp": -0.020363378201313054,
+              "pearson_dbp": -0.013877624609501725,
+              "selection_score": 0.7956976890563965,
+              "tail_count": 23018,
+              "tail_mae_sbp": 15.789395332336426,
+              "tail_mae_dbp": 11.325372695922852,
+              "high_count": 3626,
+              "high_mae_sbp": 34.674137115478516,
+              "high_mae_dbp": 21.288158416748047,
+              "low_count": 27699,
+              "low_mae_sbp": 13.031368255615234,
+              "low_mae_dbp": 8.121804237365723,
+              "high_bp_sensitivity": 0.0,
+              "high_bp_specificity": 1.0,
+              "sbp_within_5": 0.20630786403729562,
+              "sbp_within_10": 0.40631224145855677,
+              "sbp_within_15": 0.5886756111974436,
+              "dbp_within_5": 0.3243669154501083,
+              "dbp_within_10": 0.5963579855107356,
+              "dbp_within_15": 0.7923789095843639,
+              "clinical_selection_score": 0.8229260444641113,
+              "error_sd_sbp": 17.83625030517578,
+              "bland_altman_lower_sbp": -34.95811462402344,
+              "bland_altman_upper_sbp": 34.959983825683594,
+              "error_sd_dbp": 12.259331703186035,
+              "bland_altman_lower_dbp": -24.028118133544922,
+              "bland_altman_upper_dbp": 24.028461456298828,
+              "patient_macro_mae_sbp": 14.374311447143555,
+              "patient_macro_mae_dbp": 9.625097274780273
+            }
+          },
+          "paired_patient_tests": {
+            "selected_vs_fold_mean": {
+              "patient_mean_mae_delta_candidate_minus_baseline": -1.288556694984436,
+              "ci_low": -1.4540737867355347,
+              "ci_high": -1.1220200061798096,
+              "wilcoxon_statistic": 326709.0,
+              "wilcoxon_p": 1.456336716733924e-49,
+              "patients": 1524
+            },
+            "selected_vs_historical_prior": {
+              "patient_mean_mae_delta_candidate_minus_baseline": 0.005142582580447197,
+              "ci_low": -0.08716662228107452,
+              "ci_high": 0.09975280612707138,
+              "wilcoxon_statistic": 565807.5,
+              "wilcoxon_p": 0.37582738892194967,
+              "patients": 1524
+            },
+            "historical_prior_vs_fold_mean": {
+              "patient_mean_mae_delta_candidate_minus_baseline": -1.2936992645263672,
+              "ci_low": -1.4682432413101196,
+              "ci_high": -1.1214556694030762,
+              "wilcoxon_statistic": 320038.0,
+              "wilcoxon_p": 4.206691724539079e-52,
+              "patients": 1524
+            }
+          },
+          "event_safety": {
+            "candidate": "nested_selected_procedure",
+            "high_bp": {
+              "definition": "operational: SBP>=140 or DBP>=90 mmHg",
+              "direct": {
+                "n": 45689,
+                "prevalence": 0.07936264746437874,
+                "tp": 18,
+                "fn": 3608,
+                "tn": 42056,
+                "fp": 7,
+                "sensitivity": 0.004964147821290678,
+                "specificity": 0.999833582958895,
+                "ppv": 0.72,
+                "npv": 0.9209880868955851
+              },
+              "auprc": 0.23281178022967114,
+              "auroc": 0.7464189618967655,
+              "crossfit_90pct_specificity": {
+                "repeats": 10,
+                "folds": 5,
+                "threshold_median": -18.66985321044922,
+                "threshold_iqr_low": -18.78575897216797,
+                "threshold_iqr_high": -18.604833602905273,
+                "sensitivity": 0.36527854384997244,
+                "specificity": 0.8998739985260205,
+                "ppv": 0.2392478459565398,
+                "npv": 0.9426815995855841,
+                "tp": 13245,
+                "fn": 23015,
+                "tn": 378514,
+                "fp": 42116
+              }
+            },
+            "map_below_65": {
+              "definition": "derived MAP approximation (SBP+2*DBP)/3 < 65 mmHg",
+              "direct": {
+                "n": 45689,
+                "prevalence": 0.17363041432292237,
+                "tp": 229,
+                "fn": 7704,
+                "tn": 37434,
+                "fp": 322,
+                "sensitivity": 0.028866759107525525,
+                "specificity": 0.9914715541900625,
+                "ppv": 0.41560798548094374,
+                "npv": 0.8293234082148079
+              },
+              "auprc": 0.32892147274107153,
+              "auroc": 0.7288526043820194,
+              "crossfit_90pct_specificity": {
+                "repeats": 10,
+                "folds": 5,
+                "threshold_median": -3.4924850463867188,
+                "threshold_iqr_low": -3.525310516357422,
+                "threshold_iqr_high": -3.4629478454589844,
+                "sensitivity": 0.2884785075003151,
+                "specificity": 0.8998967051594449,
+                "ppv": 0.37714238628872776,
+                "npv": 0.857537669417733,
+                "tp": 22885,
+                "fn": 56445,
+                "tn": 339765,
+                "fp": 37795
+              }
+            }
+          },
+          "interpretation_limit": "This estimates the locked 200-method-plus-reference selection procedure under patient-nested resampling. The registry itself was designed after historical interaction with this cohort, so it is not equivalent to a never-seen prospective cohort."
+        },
+        "replayed_inner_candidate_counts": {
+          "1": 201,
+          "2": 201,
+          "3": 201,
+          "4": 201,
+          "5": 201
+        },
+        "independent_failures": [],
+        "outer_subject_coverage_failures": {},
+        "target_scaling_verified_outer_train_only": true
+      },
+      "consequence": ""
+    },
+    {
+      "name": "external_adaptation_semantics",
+      "status": "PASS",
+      "evidence": {
+        "zero_shot": "No external BP labels used for model fitting or output scaling.",
+        "affine": "Supervised target-domain affine adaptation with patient-level cross-fitting; not zero-shot and not subject-specific calibration.",
+        "vitaldb_reference": "Timestamp-aligned PPG waveform plus ART_SBP/ART_DBP numeric tracks; median numeric BP within each 15-s window; no pulse-transit alignment claimed."
+      },
+      "consequence": ""
+    },
+    {
+      "name": "literature_leakage_claim_scope",
+      "status": "PASS",
+      "evidence": {
+        "supported_claim": "Segment-wise splitting and overlapping windows can expose subject/segment identity and inflate performance.",
+        "unsupported_claim_avoided": "The code audit cannot establish that every competing paper leaked; FINAL must not make that blanket claim."
+      },
+      "consequence": ""
+    }
+  ],
+  "code_hashes": {
+    "features/build_feature_cache.py": "0a0349f0a6aa3a5e056471395a9168493479b03517bedd1d569815a0496d90ef",
+    "neural/build_input_cache.py": "facd585e00ce7d3e3ab90781843d1034d5be1341a15caf98b93b4a5e1975f839",
+    "phase2/engine.py": "231bfa77647b2ecbfed91dfe9e4e29ca0db8d7c158bb5a345a2d3dfa3091f92a",
+    "phase2/run_innovation200_search.py": "84761c85ee0920f91b201451553ab0db18e432e21ec8514401bc64f64bf7ec75",
+    "phase2/run_innovation200_confirmation.py": "919f2c210a43fd06c14e5ab57f1d47ec1a12646316f79d1d68656f089a58709f",
+    "phase2/run_nested200_cv.py": "194c63a3492d647b1b8743ec7d7dbf5f750ae06d09916d448c9ee468776f93fc",
+    "phase2/analyze_external_calibration.py": "2acec37c8f4d6628cbd766da9fb9c12443274d7462e2f34bf3baaff4b96b4770",
+    "phase2/prepare_vitaldb_synchronized_external.py": "ca0880f8f61a68e7c0830c86bf30527e9e2cdabc9ba95e2908237bcb569b26a7"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "mimic_ppg",
+      "status": "PASS",
+      "evidence": {
+        "found": 1524,
+        "expected": 1524
+      },
+      "remedy": "Place pXXXX_ppg.npy files under data/mimic_bp/raw/ppg/."
+    },
+    {
+      "name": "mimic_labels",
+      "status": "PASS",
+      "evidence": {
+        "found": 1524,
+        "expected": 1524
+      },
+      "remedy": "Place pXXXX_labels.npy files under data/mimic_bp/raw/labels/."
+    },
+    {
+      "name": "official_split_lists",
+      "status": "PASS",
+      "evidence": [
+        "data/mimic_bp/splits/official_source/train_subjects.txt",
+        "data/mimic_bp/splits/official_source/val_subjects.txt",
+        "data/mimic_bp/splits/official_source/test_subjects.txt"
+      ],
+      "remedy": "Supply the three official MIMIC-BP subject-list files."
+    },
+    {
+      "name": "historical_split_audit",
+      "status": "PASS",
+      "evidence": "data/mimic_bp/splits/historical_custom_split_seed42.json",
+      "remedy": "Supply the historical split JSON used only by the leakage crosswalk audit."
+    },
+    {
+      "name": "forecast_checkpoint",
+      "status": "PASS",
+      "evidence": "data/pretraining/forecast_encoder_best_model.pt",
+      "remedy": "Place the forecasting checkpoint in data/pretraining/."
+    },
+    {
+      "name": "papagei_checkpoint",
+      "status": "PASS",
+      "evidence": "data/pretraining/papagei_s.pt",
+      "remedy": "Place the licensed PaPaGei-S checkpoint in data/pretraining/."
+    },
+    {
+      "name": "ppg_bp",
+      "status": "PASS",
+      "evidence": {
+        "workbook": true,
+        "signals": 657
+      },
+      "remedy": "Copy the original PPG-BP Data File directory under data/external/ppg_bp/raw/."
+    },
+    {
+      "name": "ambulatory_56",
+      "status": "PASS",
+      "evidence": {
+        "json_files": 56
+      },
+      "remedy": "Place the source JSON files under data/external/ppg_ambulatory_56/raw/PPG_json/."
+    }
+  ],
+  "vitaldb": "Downloaded by the locked preparation stage or reused from data/external/vitaldb/raw/."
+}

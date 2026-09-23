@@ -1,0 +1,7 @@
+
+--- 2026-09-11T11:33:16.155765+00:00 ---
+                           model                                kind   mae_sbp  mae_dbp  rmse_sbp  rmse_dbp  bias_sbp  bias_dbp  pearson_sbp  pearson_dbp  iterations
+              C_010_fcn_05a9270e             candidate_seed_ensemble 12.866554 8.179870 16.214039 10.776402 -0.571287 -1.599499     0.420355     0.494786        2000
+C_001_patch_transformer_910e1b87             candidate_seed_ensemble 13.021779 8.270462 16.379272 10.858246 -0.666290 -1.223172     0.403463     0.475375        2000
+              C_008_fcn_9f15caf5             candidate_seed_ensemble 12.981005 8.219017 16.341112 10.772909 -0.797032 -0.992894     0.411586     0.488486        2000
+               simple_mean_all_3 ensemble_preregistered_equal_weight 12.846086 8.130160 16.156887 10.689389 -0.678203 -1.271855     0.426561     0.500476        2000

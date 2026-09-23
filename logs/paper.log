@@ -1,0 +1,8 @@
+
+--- 2026-09-11T18:21:46.023525+00:00 ---
+Traceback (most recent call last):
+  File "/home/asr/mahditaghsimi/maghale/FINAL/scripts/build_reviewer_corrected_paper.py", line 294, in <module>
+    main()
+  File "/home/asr/mahditaghsimi/maghale/FINAL/scripts/build_reviewer_corrected_paper.py", line 247, in main
+    raise RuntimeError("Tectonic was not found on PATH; install it before running the report stage")
+RuntimeError: Tectonic was not found on PATH; install it before running the report stage

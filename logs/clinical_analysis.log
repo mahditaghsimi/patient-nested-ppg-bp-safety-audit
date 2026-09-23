@@ -1,0 +1,26 @@
+
+--- 2026-09-11T12:03:45.433067+00:00 ---
+                               candidate   mae_sbp  mae_dbp  tail_mae_sbp  tail_mae_dbp  high_bp_sensitivity  high_bp_specificity  clinical_selection_score  uncertainty_error_spearman
+resnet_multiview10__physio_multitask_aug 12.893618 8.188686     13.584503      8.632612             0.011307             0.999239                  0.704855                    0.065352
+                        spectral_multi10 13.064508 8.261739     13.577860      8.368653             0.001103             1.000000                  0.707945                    0.036910
+                  resnet_derivative5__l1 13.093442 8.290522     13.560624      8.611461             0.003309             0.999834                  0.711789                    0.064145
+{
+  "baseline": "resnet_multiview10__physio_multitask_aug",
+  "best_clinical_score_candidate": "resnet_multiview10__physio_multitask_aug",
+  "mean_mae_improvement_mmHg": 0.0,
+  "confirmed_primary_improvement": false,
+  "paper_policy": "update primary model claim only if confirmed_primary_improvement is true; otherwise retain existing model and report medical audit as secondary analysis"
+}
+
+--- 2026-09-11T12:19:30.034676+00:00 ---
+                               candidate   mae_sbp  mae_dbp  tail_mae_sbp  tail_mae_dbp  high_bp_sensitivity  high_bp_specificity  clinical_selection_score  uncertainty_error_spearman
+resnet_multiview10__physio_multitask_aug 12.893618 8.188686     13.584503      8.632612             0.011307             0.999239                  0.704855                    0.065352
+                        spectral_multi10 13.064508 8.261739     13.577860      8.368653             0.001103             1.000000                  0.707945                    0.036910
+                  resnet_derivative5__l1 13.093442 8.290522     13.560624      8.611461             0.003309             0.999834                  0.711789                    0.064145
+{
+  "baseline": "resnet_multiview10__physio_multitask_aug",
+  "best_clinical_score_candidate": "resnet_multiview10__physio_multitask_aug",
+  "mean_mae_improvement_mmHg": 0.0,
+  "confirmed_primary_improvement": false,
+  "paper_policy": "update primary model claim only if confirmed_primary_improvement is true; otherwise retain existing model and report medical audit as secondary analysis"
+}

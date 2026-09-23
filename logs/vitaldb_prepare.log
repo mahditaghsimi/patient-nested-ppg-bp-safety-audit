@@ -1,0 +1,165 @@
+
+--- 2026-09-11T10:49:10.890417+00:00 ---
+downloaded_or_verified=32/384
+downloaded_or_verified=64/384
+downloaded_or_verified=96/384
+downloaded_or_verified=128/384
+downloaded_or_verified=160/384
+downloaded_or_verified=192/384
+downloaded_or_verified=224/384
+downloaded_or_verified=256/384
+downloaded_or_verified=288/384
+downloaded_or_verified=320/384
+downloaded_or_verified=352/384
+downloaded_or_verified=384/384
+prepared=1/128 case=338 accepted=20
+prepared=2/128 case=284 accepted=20
+prepared=3/128 case=6047 accepted=20
+prepared=4/128 case=28 accepted=20
+prepared=5/128 case=620 accepted=20
+prepared=6/128 case=5075 accepted=20
+prepared=7/128 case=3978 accepted=20
+prepared=8/128 case=4703 accepted=20
+prepared=9/128 case=4584 accepted=20
+prepared=10/128 case=5561 accepted=20
+prepared=11/128 case=1016 accepted=20
+prepared=12/128 case=4847 accepted=20
+prepared=13/128 case=2165 accepted=20
+prepared=14/128 case=6020 accepted=20
+prepared=15/128 case=740 accepted=20
+prepared=16/128 case=599 accepted=20
+prepared=17/128 case=6079 accepted=20
+prepared=18/128 case=3484 accepted=0
+prepared=19/128 case=6385 accepted=20
+prepared=20/128 case=1796 accepted=20
+prepared=21/128 case=1644 accepted=0
+prepared=22/128 case=1697 accepted=20
+prepared=23/128 case=1719 accepted=20
+prepared=24/128 case=4936 accepted=20
+prepared=25/128 case=2375 accepted=20
+prepared=26/128 case=5717 accepted=20
+prepared=27/128 case=5598 accepted=20
+prepared=28/128 case=1601 accepted=20
+prepared=29/128 case=5509 accepted=20
+prepared=30/128 case=7 accepted=20
+prepared=31/128 case=5459 accepted=0
+prepared=32/128 case=2287 accepted=20
+prepared=33/128 case=1555 accepted=20
+prepared=34/128 case=4658 accepted=20
+prepared=35/128 case=6145 accepted=0
+prepared=36/128 case=6251 accepted=0
+prepared=37/128 case=5368 accepted=20
+prepared=38/128 case=3102 accepted=20
+prepared=39/128 case=2130 accepted=20
+prepared=40/128 case=527 accepted=20
+prepared=41/128 case=5817 accepted=20
+prepared=42/128 case=2716 accepted=20
+prepared=43/128 case=366 accepted=20
+prepared=44/128 case=4322 accepted=20
+prepared=45/128 case=5725 accepted=20
+prepared=46/128 case=5956 accepted=20
+prepared=47/128 case=5420 accepted=20
+prepared=48/128 case=636 accepted=20
+prepared=49/128 case=5950 accepted=20
+prepared=50/128 case=3344 accepted=20
+prepared=51/128 case=237 accepted=20
+prepared=52/128 case=3154 accepted=20
+prepared=53/128 case=5933 accepted=20
+prepared=54/128 case=1522 accepted=20
+prepared=55/128 case=1559 accepted=20
+prepared=56/128 case=1207 accepted=20
+prepared=57/128 case=5979 accepted=0
+prepared=58/128 case=4702 accepted=20
+prepared=59/128 case=3800 accepted=20
+prepared=60/128 case=3217 accepted=0
+prepared=61/128 case=6381 accepted=20
+prepared=62/128 case=1473 accepted=20
+prepared=63/128 case=611 accepted=20
+prepared=64/128 case=3785 accepted=20
+prepared=65/128 case=6080 accepted=20
+prepared=66/128 case=6195 accepted=20
+prepared=67/128 case=658 accepted=0
+prepared=68/128 case=5839 accepted=20
+prepared=69/128 case=5107 accepted=20
+prepared=70/128 case=5556 accepted=20
+prepared=71/128 case=3460 accepted=20
+prepared=72/128 case=576 accepted=20
+prepared=73/128 case=4456 accepted=20
+prepared=74/128 case=5787 accepted=20
+prepared=75/128 case=4262 accepted=20
+prepared=76/128 case=936 accepted=20
+prepared=77/128 case=5822 accepted=20
+prepared=78/128 case=388 accepted=20
+prepared=79/128 case=4135 accepted=20
+prepared=80/128 case=4202 accepted=20
+prepared=81/128 case=4713 accepted=20
+prepared=82/128 case=6296 accepted=20
+prepared=83/128 case=3567 accepted=20
+prepared=84/128 case=5395 accepted=20
+prepared=85/128 case=6128 accepted=20
+prepared=86/128 case=4241 accepted=20
+prepared=87/128 case=2605 accepted=20
+prepared=88/128 case=933 accepted=20
+prepared=89/128 case=4805 accepted=20
+prepared=90/128 case=627 accepted=20
+prepared=91/128 case=445 accepted=20
+prepared=92/128 case=5353 accepted=20
+prepared=93/128 case=4724 accepted=20
+prepared=94/128 case=6316 accepted=20
+prepared=95/128 case=6097 accepted=20
+prepared=96/128 case=1563 accepted=20
+prepared=97/128 case=3500 accepted=20
+prepared=98/128 case=879 accepted=20
+prepared=99/128 case=3249 accepted=20
+prepared=100/128 case=4558 accepted=20
+prepared=101/128 case=1747 accepted=20
+prepared=102/128 case=3519 accepted=20
+prepared=103/128 case=5463 accepted=20
+prepared=104/128 case=5844 accepted=20
+prepared=105/128 case=742 accepted=20
+prepared=106/128 case=2062 accepted=20
+prepared=107/128 case=5997 accepted=20
+prepared=108/128 case=3085 accepted=20
+prepared=109/128 case=4841 accepted=20
+prepared=110/128 case=5024 accepted=20
+prepared=111/128 case=5734 accepted=20
+prepared=112/128 case=2809 accepted=20
+prepared=113/128 case=4309 accepted=20
+prepared=114/128 case=5628 accepted=0
+prepared=115/128 case=631 accepted=20
+prepared=116/128 case=4883 accepted=20
+prepared=117/128 case=5267 accepted=20
+prepared=118/128 case=4563 accepted=20
+prepared=119/128 case=1831 accepted=20
+prepared=120/128 case=777 accepted=20
+prepared=121/128 case=3277 accepted=20
+prepared=122/128 case=4354 accepted=20
+prepared=123/128 case=5388 accepted=20
+prepared=124/128 case=4739 accepted=20
+prepared=125/128 case=4010 accepted=20
+prepared=126/128 case=4163 accepted=20
+prepared=127/128 case=4101 accepted=20
+prepared=128/128 case=4207 accepted=20
+{
+  "status": "PASS",
+  "selected_cases": 128,
+  "accepted_cases": 119,
+  "accepted_windows": 2380,
+  "shape": [
+    2380,
+    3,
+    1875
+  ],
+  "sbp_range": [
+    55.0,
+    219.0
+  ],
+  "dbp_range": [
+    29.0,
+    126.0
+  ],
+  "high_bp_prevalence": 0.1689075630252101,
+  "prepared_sha256": "bc8cd689723166e7e1f48cf148268895caaab2129d6feef8520801fa0ba5eddb",
+  "downloaded_bytes": 460121972,
+  "selection_rule": "lowest SHA-256 rank of ICBME2026-vitaldb-sync-v1:<caseid>"
+}

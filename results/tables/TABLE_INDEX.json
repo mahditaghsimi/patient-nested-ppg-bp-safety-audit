@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "duplicate_policy": {
+    "train_patients": 1100,
+    "validation_patients": 195,
+    "test_patients": 229,
+    "raw_segments": 45720,
+    "excluded_segments": 31,
+    "retained_segments": 45689,
+    "duplicate_groups": 30,
+    "cross_patient_duplicate_groups": 1
+  },
+  "tables": [
+    {
+      "file": "results/tables/TABLE_1_COHORT_AND_SPLIT.csv",
+      "rows": 4,
+      "description": "Official subject split and external cohort accounting."
+    },
+    {
+      "file": "results/tables/TABLE_2_REPEATED_OOF_DESCRIPTIVE.csv",
+      "rows": 3,
+      "description": "Repeated grouped OOF; descriptive because method selection was not fully nested."
+    },
+    {
+      "file": "results/tables/TABLE_3_NESTED_SELECTION_RESULTS.csv",
+      "rows": 3,
+      "description": "Primary five-fold patient-nested estimate of the locked selection procedure."
+    },
+    {
+      "file": "results/tables/TABLE_3B_NESTED_SELECTIONS.csv",
+      "rows": 5,
+      "description": "Configuration selected independently inside each outer fold."
+    },
+    {
+      "file": "results/tables/TABLE_4_EVENT_SAFETY.csv",
+      "rows": 4,
+      "description": "Operational high-BP and derived-low-MAP event endpoints."
+    },
+    {
+      "file": "results/tables/TABLE_5_EXTERNAL_TRANSFER.csv",
+      "rows": 20,
+      "description": "Zero-shot results and clearly separated supervised target-domain adaptation."
+    },
+    {
+      "file": "results/tables/TABLE_6_PRESSURE_RANGE_AUDIT.csv",
+      "rows": 10,
+      "description": "Range-specific error and bias; not a causal ablation."
+    },
+    {
+      "file": "results/tables/SUPPLEMENT_ALL_200_CONFIGS_AND_RESULTS.csv",
+      "rows": 200,
+      "description": "Complete literature-informed, systematically constructed configuration registry and screening results."
+    },
+    {
+      "file": "results/tables/SUPPLEMENT_COMPONENT_ASSOCIATIONS.csv",
+      "rows": 64,
+      "description": "Descriptive component associations; not causal one-factor ablations."
+    },
+    {
+      "file": "results/tables/SUPPLEMENT_NESTED_1005_INNER_FITS.csv",
+      "rows": 1005,
+      "description": "All 201 candidates in each of five inner selections."
+    },
+    {
+      "file": "results/tables/SUPPLEMENT_REPEATED_75_FITS.csv",
+      "rows": 75,
+      "description": "All repeated grouped-confirmation fits."
+    },
+    {
+      "file": "results/tables/TABLE_7_BIAS_BLAND_ALTMAN_CALIBRATION.csv",
+      "rows": 8,
+      "description": "Bias, SD, 95% limits of agreement, correlation, and calibration slope/intercept."
+    }
+  ]
+}

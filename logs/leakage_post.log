@@ -1,0 +1,19 @@
+
+--- 2026-09-11T18:21:22.965931+00:00 ---
+{
+  "status": "PASS_WITH_DECLARED_LIMITATIONS",
+  "checks": {
+    "official_split_patient_disjoint": "PASS",
+    "historical_split_was_not_official": "CORRECTED",
+    "metadata_matches_official_split": "PASS",
+    "exact_duplicate_policy": "PASS",
+    "central_window_and_local_normalization": "PASS",
+    "engineered_feature_central_window": "PASS",
+    "confirmation_fold_replay": "PASS",
+    "confirmation_selection_independence": "LIMITATION",
+    "nested_200_procedural_evaluation": "PASS",
+    "external_adaptation_semantics": "PASS",
+    "literature_leakage_claim_scope": "PASS"
+  }
+}
+/home/asr/mahditaghsimi/maghale/FINAL/artifacts/leakage_audit_post.json

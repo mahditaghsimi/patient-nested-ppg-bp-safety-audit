@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "figures": [
+    {
+      "png": "results/figures/FIGURE_1_BLAND_ALTMAN.png",
+      "pdf": "results/figures/FIGURE_1_BLAND_ALTMAN.pdf",
+      "description": "Bland-Altman plots requested by the reviewer."
+    },
+    {
+      "png": "results/figures/FIGURE_2_VITALDB_CALIBRATION.png",
+      "pdf": "results/figures/FIGURE_2_VITALDB_CALIBRATION.pdf",
+      "description": "External target-prediction scatter before and after supervised adaptation."
+    },
+    {
+      "png": "results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.png",
+      "pdf": "results/figures/FIGURE_3_RANGE_SPECIFIC_ERROR.pdf",
+      "description": "Aggregate MAE masks severe errors at pressure extremes."
+    },
+    {
+      "png": "results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.png",
+      "pdf": "results/figures/FIGURE_4_SEARCH_AND_NESTED_SELECTION.pdf",
+      "description": "Full screening distribution and fold-specific nested selection."
+    },
+    {
+      "png": "results/figures/FIGURE_5_AMBULATORY_DBP_SHIFT.png",
+      "pdf": "results/figures/FIGURE_5_AMBULATORY_DBP_SHIFT.pdf",
+      "description": "Ambulatory DBP distributions expose severe zero-shot output-scale mismatch."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+
+--- 2026-09-11T10:47:12.792833+00:00 ---
+{
+  "train_patients": 1100,
+  "validation_patients": 195,
+  "test_patients": 229,
+  "raw_segments": 45720,
+  "excluded_segments": 31,
+  "retained_segments": 45689,
+  "duplicate_groups": 30,
+  "cross_patient_duplicate_groups": 1
+}
+/home/asr/mahditaghsimi/maghale/FINAL/data/mimic_bp/splits/official_patient_split.json

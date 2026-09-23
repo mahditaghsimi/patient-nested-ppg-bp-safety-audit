@@ -1,0 +1,5 @@
+cohort,partition,patients,windows_after_duplicate_policy,reference
+MIMIC-BP,train,1100,32971,invasive ABP-derived SBP/DBP
+MIMIC-BP,validation,195,5850,invasive ABP-derived SBP/DBP
+MIMIC-BP,test,229,6868,invasive ABP-derived SBP/DBP
+VitalDB deterministic synchronized subset,locked external,119,2380,timestamp-aligned numeric ART_SBP/ART_DBP medians

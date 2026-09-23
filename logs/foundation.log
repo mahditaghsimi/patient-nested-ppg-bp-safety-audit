@@ -1,0 +1,50 @@
+
+--- 2026-09-11T11:20:24.799589+00:00 ---
+F_001_papagei_030708e7 epoch=1 loss=0.5581 MAE=13.670/9.281 score=0.7556
+F_001_papagei_030708e7 epoch=2 loss=0.5462 MAE=13.837/9.191 score=0.7566
+F_001_papagei_030708e7 epoch=3 loss=0.5391 MAE=13.639/9.153 score=0.7496
+F_001_papagei_030708e7 epoch=4 loss=0.5377 MAE=13.512/9.311 score=0.7524
+F_001_papagei_030708e7 epoch=5 loss=0.5345 MAE=13.549/9.311 score=0.7535
+F_001_papagei_030708e7 epoch=6 loss=0.5336 MAE=13.496/9.134 score=0.7448
+F_001_papagei_030708e7 epoch=7 loss=0.5310 MAE=13.523/9.104 score=0.7444
+F_001_papagei_030708e7 epoch=8 loss=0.5303 MAE=13.498/9.258 score=0.7499
+F_001_papagei_030708e7 epoch=9 loss=0.5294 MAE=13.625/9.001 score=0.7430
+F_001_papagei_030708e7 epoch=10 loss=0.5289 MAE=13.487/9.057 score=0.7415
+F_002_papagei_e3bd39a6 epoch=1 loss=0.5456 MAE=13.463/9.215 score=0.7472
+F_002_papagei_e3bd39a6 epoch=2 loss=0.5274 MAE=13.305/9.158 score=0.7405
+F_002_papagei_e3bd39a6 epoch=3 loss=0.5209 MAE=13.374/9.262 score=0.7466
+F_002_papagei_e3bd39a6 epoch=4 loss=0.5176 MAE=13.532/9.512 score=0.7612
+F_002_papagei_e3bd39a6 epoch=5 loss=0.5133 MAE=13.444/9.473 score=0.7571
+F_002_papagei_e3bd39a6 epoch=6 loss=0.5123 MAE=13.714/9.568 score=0.7684
+F_003_papagei_8c83d9bd epoch=1 loss=0.7497 MAE=13.676/9.270 score=0.7553
+F_003_papagei_8c83d9bd epoch=2 loss=0.7295 MAE=13.800/9.166 score=0.7546
+F_003_papagei_8c83d9bd epoch=3 loss=0.7207 MAE=13.686/9.211 score=0.7533
+F_003_papagei_8c83d9bd epoch=4 loss=0.7168 MAE=13.537/9.339 score=0.7543
+F_003_papagei_8c83d9bd epoch=5 loss=0.7126 MAE=13.523/9.352 score=0.7544
+F_003_papagei_8c83d9bd epoch=6 loss=0.7108 MAE=13.515/9.104 score=0.7442
+F_003_papagei_8c83d9bd epoch=7 loss=0.7075 MAE=13.502/9.111 score=0.7441
+F_003_papagei_8c83d9bd epoch=8 loss=0.7070 MAE=13.445/9.221 score=0.7470
+F_003_papagei_8c83d9bd epoch=9 loss=0.7042 MAE=13.466/9.090 score=0.7422
+F_003_papagei_8c83d9bd epoch=10 loss=0.7031 MAE=13.419/9.043 score=0.7390
+F_004_papagei_24c653db epoch=1 loss=0.7377 MAE=13.456/9.275 score=0.7494
+F_004_papagei_24c653db epoch=2 loss=0.7067 MAE=13.313/9.096 score=0.7382
+F_004_papagei_24c653db epoch=3 loss=0.6969 MAE=13.373/9.161 score=0.7425
+F_004_papagei_24c653db epoch=4 loss=0.6906 MAE=13.692/9.319 score=0.7578
+F_004_papagei_24c653db epoch=5 loss=0.6842 MAE=13.642/9.333 score=0.7570
+F_004_papagei_24c653db epoch=6 loss=0.6828 MAE=13.981/9.349 score=0.7670
+F_005_papagei_ca42b284 epoch=1 loss=0.7754 MAE=13.666/9.274 score=0.7552
+F_005_papagei_ca42b284 epoch=2 loss=0.7627 MAE=13.869/9.213 score=0.7584
+F_005_papagei_ca42b284 epoch=3 loss=0.7550 MAE=13.682/9.159 score=0.7510
+F_005_papagei_ca42b284 epoch=4 loss=0.7535 MAE=13.550/9.346 score=0.7549
+F_005_papagei_ca42b284 epoch=5 loss=0.7503 MAE=13.566/9.329 score=0.7547
+F_005_papagei_ca42b284 epoch=6 loss=0.7497 MAE=13.540/9.172 score=0.7476
+F_005_papagei_ca42b284 epoch=7 loss=0.7461 MAE=13.573/9.091 score=0.7452
+F_005_papagei_ca42b284 epoch=8 loss=0.7454 MAE=13.517/9.343 score=0.7539
+F_005_papagei_ca42b284 epoch=9 loss=0.7446 MAE=13.617/9.009 score=0.7431
+F_005_papagei_ca42b284 epoch=10 loss=0.7439 MAE=13.495/9.085 score=0.7428
+ epoch  train_loss   mae_sbp  mae_dbp  mean_mae  worst_target_mae  rmse_sbp  rmse_dbp  bias_sbp  bias_dbp  pearson_sbp  pearson_dbp  selection_score  tail_count  tail_mae_sbp  tail_mae_dbp  high_count  high_mae_sbp  high_mae_dbp  low_count  low_mae_sbp  low_mae_dbp  high_bp_sensitivity  high_bp_specificity  sbp_within_5  sbp_within_10  sbp_within_15  dbp_within_5  dbp_within_10  dbp_within_15  clinical_selection_score                 run_id stage backbone         view  duration_seconds engineered      head      loss augmentation balance  seed  parameters  trainable_parameters  train_samples  eval_samples  runtime_seconds
+     2    0.706679 13.313261 9.095965 11.204613         13.313261 16.957525 11.880182 -2.038257 -1.754816     0.243813     0.259733         0.738217        2965     13.121116      8.824687         403     33.634380     21.518751       3562    11.575342     6.735645                  0.0                  1.0      0.238974       0.461197       0.642906      0.347692       0.642051       0.829060                  0.734138 F_004_papagei_24c653db     F  papagei ppg_bandpass              10.0       none multitask multitask jitter_scale    none    42     5897104               5897104          32971          5850        37.028093
+    10    0.703064 13.419249 9.042633 11.230941         13.419249 16.876032 11.958144 -1.042221 -2.526886     0.219982     0.276825         0.739008        2965     13.708644      8.286091         403     33.054092     22.486937       3562    11.927402     6.294349                  0.0                  1.0      0.231282       0.447863       0.629915      0.357778       0.652308       0.835043                  0.733369 F_003_papagei_8c83d9bd     F  papagei ppg_bandpass              10.0       none multitask multitask jitter_scale    none    42     5897104               1950084          32971          5850        36.571039
+     2    0.527366 13.304542 9.157684 11.231113         13.304542 16.862223 11.975727 -1.152729 -1.953519     0.243520     0.245938         0.740471        2965     13.423698      8.746711         403     32.674629     21.716278       3562    11.786036     6.694928                  0.0                  1.0      0.236581       0.455726       0.644957      0.344103       0.642564       0.830598                  0.737144 F_002_papagei_e3bd39a6     F  papagei ppg_bandpass              10.0       none    direct     huber         none    none    42     5896974               5896974          32971          5850        36.721328
+    10    0.528855 13.487216 9.057117 11.272166         13.487216 17.043898 11.968731 -0.780309 -2.404644     0.201688     0.269980         0.741484        2965     13.825047      8.384465         403     33.042725     22.379641       3562    12.047227     6.390114                  0.0                  1.0      0.231282       0.451111       0.629060      0.357949       0.654188       0.834017                  0.737031 F_001_papagei_030708e7     F  papagei ppg_bandpass              10.0       none    direct     huber         none    none    42     5896974               1949954          32971          5850        36.887869
+    10    0.743889 13.495124 9.084941 11.290032         13.495124 17.048800 12.017459 -0.738945 -2.563466     0.203054     0.267729         0.742829        2965     13.851121      8.290096         403     32.894527     22.466312       3562    12.072550     6.338930                  0.0                  1.0      0.230940       0.449573       0.629060      0.355726       0.653675       0.834188                  0.737267 F_005_papagei_ca42b284     F  papagei ppg_bandpass              10.0       none    direct        l1         none    none    42     5896974               1949954          32971          5850        30.215863

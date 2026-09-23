@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "stage": "pre",
+  "created_utc": "2026-09-11T10:55:08.306166+00:00",
+  "status": "PASS_WITH_DECLARED_LIMITATIONS",
+  "checks": [
+    {
+      "name": "official_split_patient_disjoint",
+      "status": "PASS",
+      "evidence": {
+        "counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "pairwise_overlap": 0,
+        "source_hashes": {
+          "test_subjects.txt": "2ef459231d3415412bb34c95d07a655aa721a684f7fa3749080312f93da71606",
+          "train_subjects.txt": "a67897bdc60357bbf3aa025ccc064375b7de0291f4bfeb807ac514ea1e550a3a",
+          "val_subjects.txt": "5e23107ff3cfd951cbcbb9c205d53ef9c40654145b28e24a20183b7f53650402"
+        }
+      },
+      "consequence": ""
+    },
+    {
+      "name": "historical_split_was_not_official",
+      "status": "CORRECTED",
+      "evidence": {
+        "historical_counts": {
+          "train": 1066,
+          "validation": 229,
+          "test": 229
+        },
+        "official_counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "crosswalk": {
+          "train": {
+            "train": 760,
+            "validation": 142,
+            "test": 164
+          },
+          "validation": {
+            "train": 168,
+            "validation": 27,
+            "test": 34
+          },
+          "test": {
+            "train": 172,
+            "validation": 26,
+            "test": 31
+          }
+        },
+        "historical_test_equals_official_test": false
+      },
+      "consequence": "The old manuscript wording 'original split' was factually wrong; FINAL uses and names the official split."
+    },
+    {
+      "name": "metadata_matches_official_split",
+      "status": "PASS",
+      "evidence": {
+        "segment_counts": {
+          "train": 32971,
+          "validation": 5850,
+          "test": 6868
+        },
+        "patient_counts": {
+          "train": 1100,
+          "validation": 195,
+          "test": 229
+        },
+        "mismatched_patients": [],
+        "unique_patient_segment_keys": true,
+        "segments": 45689
+      },
+      "consequence": ""
+    },
+    {
+      "name": "exact_duplicate_policy",
+      "status": "PASS",
+      "evidence": {
+        "duplicate_groups": 30,
+        "excluded_segments": 31,
+        "cross_patient_groups": 1,
+        "excluded_still_retained": [],
+        "all_cross_patient_copies_removed": true,
+        "groups_with_inconsistent_sbp_dbp_labels": [],
+        "definition": "BLAKE2b equality of all 3,750 float samples in the raw 30-s PPG segment"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "central_window_and_local_normalization",
+      "status": "PASS",
+      "evidence": {
+        "audited_samples": 25,
+        "source_samples": [
+          937,
+          2812
+        ],
+        "maximum_float16_difference": 0.0,
+        "fit_scope": "each input window independently; no labels or other patients used"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "engineered_feature_central_window",
+      "status": "PASS",
+      "evidence": {
+        "audited_samples": 12,
+        "maximum_float32_difference": 0.0,
+        "manifest": {
+          "samples": 45689,
+          "source_window": "central 15 s of each 30-s MIMIC-BP segment (samples 937:2812 at 125 Hz)",
+          "feature_scope": "all engineered features are computed from the same central window used by waveform models",
+          "learned_scaling": "not applied in cache; fold-specific mean/SD are fitted in phase2.engine.get_engineered on train indices only"
+        },
+        "fit_scope": "feature extraction per window; scaling later fitted on fold training indices only"
+      },
+      "consequence": ""
+    },
+    {
+      "name": "external_adaptation_semantics",
+      "status": "PASS",
+      "evidence": {
+        "zero_shot": "No external BP labels used for model fitting or output scaling.",
+        "affine": "Supervised target-domain affine adaptation with patient-level cross-fitting; not zero-shot and not subject-specific calibration.",
+        "vitaldb_reference": "Timestamp-aligned PPG waveform plus ART_SBP/ART_DBP numeric tracks; median numeric BP within each 15-s window; no pulse-transit alignment claimed."
+      },
+      "consequence": ""
+    },
+    {
+      "name": "literature_leakage_claim_scope",
+      "status": "PASS",
+      "evidence": {
+        "supported_claim": "Segment-wise splitting and overlapping windows can expose subject/segment identity and inflate performance.",
+        "unsupported_claim_avoided": "The code audit cannot establish that every competing paper leaked; FINAL must not make that blanket claim."
+      },
+      "consequence": ""
+    }
+  ],
+  "code_hashes": {
+    "features/build_feature_cache.py": "0a0349f0a6aa3a5e056471395a9168493479b03517bedd1d569815a0496d90ef",
+    "neural/build_input_cache.py": "facd585e00ce7d3e3ab90781843d1034d5be1341a15caf98b93b4a5e1975f839",
+    "phase2/engine.py": "231bfa77647b2ecbfed91dfe9e4e29ca0db8d7c158bb5a345a2d3dfa3091f92a",
+    "phase2/run_innovation200_search.py": "84761c85ee0920f91b201451553ab0db18e432e21ec8514401bc64f64bf7ec75",
+    "phase2/run_innovation200_confirmation.py": "919f2c210a43fd06c14e5ab57f1d47ec1a12646316f79d1d68656f089a58709f",
+    "phase2/run_nested200_cv.py": "194c63a3492d647b1b8743ec7d7dbf5f750ae06d09916d448c9ee468776f93fc",
+    "phase2/analyze_external_calibration.py": "2acec37c8f4d6628cbd766da9fb9c12443274d7462e2f34bf3baaff4b96b4770",
+    "phase2/prepare_vitaldb_synchronized_external.py": "ca0880f8f61a68e7c0830c86bf30527e9e2cdabc9ba95e2908237bcb569b26a7"
+  }
+}

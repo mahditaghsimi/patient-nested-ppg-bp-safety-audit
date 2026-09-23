@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-09-11T18:21:42.841235+00:00",
+  "purpose": "Exact local snapshot used for the Taqsim manuscript",
+  "datasets": {
+    "mimic_bp_ppg_raw": {
+      "path": "data/mimic_bp/raw/ppg",
+      "files": 1524,
+      "bytes": 1371795072,
+      "collection_sha256": "a8a1a35ceced92d84bb5144bbc111131fe5f9bbbf6614f2d12c989bb5afdff5a"
+    },
+    "mimic_bp_labels_raw": {
+      "path": "data/mimic_bp/raw/labels",
+      "files": 1524,
+      "bytes": 926592,
+      "collection_sha256": "aef9551e1cb6337fcc5cfffcbbf7cccb625cecbc8eb3e4936c943023a66ce200"
+    },
+    "internal_metadata": {
+      "path": "outputs/neural/cache/metadata.npz",
+      "bytes": 376317,
+      "sha256": "216b01dcb259bb3bf3d72565dd6f407e60cac72408ae4a26a6377bec561969bb",
+      "arrays": {
+        "patient_id": [
+          45689
+        ],
+        "segment_id": [
+          45689
+        ],
+        "split": [
+          45689
+        ],
+        "y": [
+          45689,
+          2
+        ],
+        "raw_center": [
+          45689
+        ],
+        "raw_iqr": [
+          45689
+        ]
+      },
+      "patients": 1524
+    },
+    "ppg_bp_219": {
+      "path": "data/external/prepared/ppg_bp_219.npz",
+      "bytes": 1027651,
+      "sha256": "1a94083ca9876f626bf489ffaf8ba040ac4fa7b73cb47b6c0074e8f123a22ff4",
+      "arrays": {
+        "x": [
+          657,
+          3,
+          1875
+        ],
+        "patient_id": [
+          657
+        ],
+        "record_id": [
+          657
+        ],
+        "y": [
+          657,
+          2
+        ],
+        "age": [
+          657
+        ],
+        "sex": [
+          657
+        ],
+        "fs": [],
+        "original_duration_seconds": []
+      },
+      "patients": 219
+    },
+    "ambulatory_56": {
+      "path": "data/external/prepared/ppg_ambulatory_56.npz",
+      "bytes": 4751025,
+      "sha256": "77c40c6043be7f3c8bd14f3114c3b280967cbe93496414f7850c617d62960a8b",
+      "arrays": {
+        "x": [
+          461,
+          3,
+          1875
+        ],
+        "patient_id": [
+          461
+        ],
+        "record_id": [
+          461
+        ],
+        "y": [
+          461,
+          2
+        ],
+        "age": [
+          461
+        ],
+        "sex": [
+          461
+        ],
+        "fs": [],
+        "original_duration_seconds": []
+      },
+      "patients": 56
+    },
+    "vitaldb_sync128": {
+      "path": "data/external/vitaldb/prepared/vitaldb_sync128.npz",
+      "bytes": 8148925,
+      "sha256": "bc8cd689723166e7e1f48cf148268895caaab2129d6feef8520801fa0ba5eddb",
+      "arrays": {
+        "x": [
+          2380,
+          3,
+          1875
+        ],
+        "y": [
+          2380,
+          2
+        ],
+        "patient_id": [
+          2380
+        ],
+        "window_start_seconds": [
+          2380
+        ],
+        "fs": []
+      },
+      "patients": 119
+    }
+  },
+  "redistribution_warning": "Presence in this local package does not grant public redistribution rights; see DATA_LICENSES.md."
+}

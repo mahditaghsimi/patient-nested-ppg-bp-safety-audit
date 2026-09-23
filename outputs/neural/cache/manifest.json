@@ -1,0 +1,12 @@
+{
+  "samples": 45689,
+  "shape": [
+    45689,
+    3,
+    1875
+  ],
+  "dtype": "float16",
+  "source_window": "central 15 s of each 30-s MIMIC-BP segment (samples 937:2812 at 125 Hz)",
+  "normalization": "per-window median/IQR; PPG, VPG, APG channels; no cohort-fitted waveform transform",
+  "test_used_for_training_or_selection": false
+}

@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "locked_before_auxiliary_training": true,
+  "date": "2026-08-21",
+  "primary_question": "Does leakage-safe supervised auxiliary pretraining on quality-controlled MIMIC-III PPG improve MIMIC-BP validation performance versus architecture-matched scratch training?",
+  "primary_task": "simultaneous SBP/DBP estimation",
+  "forecasting_status": "secondary feasibility analysis until event-enriched continuous PPG/ABP is available",
+  "source_policy": {
+    "dataset": "imported MIMIC-III dirty-aware 3GB bundle",
+    "training_view": "high_confidence AND official_unique AND known_nonoverlap",
+    "high_confidence": "finite AND not step_artifact AND abs(lag_correlation)>=0.5 AND ppg_sqi>=0.5 AND abp_sqi>=0.5",
+    "unknown_mapping_as_nonoverlap": false,
+    "source_split": "grouped by official subject_id; 15 percent validation",
+    "raw_shards_immutable": true
+  },
+  "target_policy": {
+    "dataset": "MIMIC-BP 1524 subjects",
+    "screening_train": "official train split only",
+    "screening_validation": "official validation split only",
+    "test_used_for_training_or_selection": false
+  },
+  "input": {
+    "sampling_rate_hz": 125,
+    "duration_seconds": 10,
+    "cache_duration_seconds": 15,
+    "channels": ["PPG", "VPG", "APG"],
+    "normalization": "median/IQR for PPG and MAD for derivatives"
+  },
+  "screening": {
+    "architectures": [
+      "resnet_multiview",
+      "gated_tcn",
+      "patch_transformer",
+      "spectral_fusion",
+      "papagei_frozen"
+    ],
+    "modes": ["scratch", "supervised_aux_pretrain"],
+    "seed": 20260821,
+    "source_epochs": 4,
+    "target_epochs": 6,
+    "paired_budget": true,
+    "primary_metric": "mean of SBP MAE and DBP MAE on target validation",
+    "improvement_sign": "negative delta_mean_mae"
+  },
+  "confirmation_if_screening_positive": {
+    "selection": "best delta_mean_mae with no target worsening greater than 0.5 mmHg",
+    "seeds": [42, 123, 2026],
+    "evaluation": "patient-grouped repeated validation and existing external cohorts",
+    "uncertainty": "patient-cluster bootstrap confidence intervals",
+    "required_claim": "improvement must not rely on target test or mapping-unknown source windows"
+  },
+  "forecasting_gate": {
+    "major_transition": "abs(delta_SBP)>=10 or abs(delta_DBP)>=5 mmHg",
+    "required_baselines": ["persistence", "seasonal_repeat", "linear_trend", "past_BP_only"],
+    "required_metrics": ["transition_skill", "direction_accuracy", "AUPRC", "lead_time", "external_validation"],
+    "minimum_before_deep_claim": "at least 200 independent transitions with subject-disjoint evaluation"
+  }
+}

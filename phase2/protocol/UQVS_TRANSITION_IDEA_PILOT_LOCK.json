@@ -1,0 +1,36 @@
+{
+  "locked_before_full_pilot": true,
+  "source_paper": {
+    "title": "Modeling Localized PPG for Blood Pressure Forecasting With MoE and Quantile Regression",
+    "doi": "10.1109/LSP.2026.3652975",
+    "source_protocol": "60 s PPG, 30 s stride, target average 4 min 40 s to 5 min 20 s after history end",
+    "source_validation_warning": "50% overlapping samples randomly shuffled into an 80/20 split; no patient-separated test or persistence baseline reported"
+  },
+  "pilot_scope": {
+    "dataset": "University of Queensland Vital Signs Dataset",
+    "patients_available": 32,
+    "data_slice": "first 10 minutes of each case",
+    "sensor_input": "single-channel PPG morphology",
+    "calibration_input": "current NBP used only for residual/calibration-lite mode",
+    "forecast_horizon": "approximately 5 minutes"
+  },
+  "candidate_method": {
+    "name": "Tiny transition-aware residual PPG forecaster",
+    "features": "108 morphology, derivative, spectrum, pulse and six-subwindow drift features",
+    "models": ["Ridge", "HistGradientBoosting", "ExtraTrees"],
+    "target": "primary calibration-lite mode: future BP minus current BP; secondary PPG-only mode: absolute future BP",
+    "reference_baseline": "no-change persistence"
+  },
+  "evaluation": {
+    "primary_protocol": "5-fold patient-group cross-validation",
+    "diagnostic_protocol": "20 repeated sample-random 80/20 splits",
+    "major_transition": "abs(delta_SBP)>=10 OR abs(delta_DBP)>=5 mmHg",
+    "metrics": [
+      "SBP/DBP MAE",
+      "skill = 1 - MAE_model/MAE_persistence",
+      "SBP direction balanced accuracy"
+    ]
+  },
+  "promotion_gate": "Positive mean transition skill for both SBP and DBP under patient-group CV; otherwise no accuracy-improvement claim",
+  "scientific_position": "A pilot can establish feasibility or expose protocol leakage; it cannot establish clinical validity from only ten minutes per patient."
+}

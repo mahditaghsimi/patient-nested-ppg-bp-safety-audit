@@ -1,0 +1,63 @@
+{
+  "locked_before_downloading_waveform_outcomes": true,
+  "version": "1.0.0",
+  "purpose": "Independent synchronized invasive-BP external stress test of the fixed MIMIC-BP PPG estimator",
+  "source": {
+    "dataset": "VitalDB Open Dataset",
+    "api": "https://api.vitaldb.net",
+    "tracks": [
+      "SNUADC/PLETH",
+      "Solar8000/ART_SBP",
+      "Solar8000/ART_DBP"
+    ],
+    "license": "CC BY-NC 3.0"
+  },
+  "selection": {
+    "eligible_definition": "case contains all three required synchronized tracks",
+    "eligible_cases_observed_from_track_metadata": 3507,
+    "requested_cases": 128,
+    "method": "lowest SHA-256 rank of ICBME2026-vitaldb-sync-v1:<caseid>",
+    "outcome_blind": true
+  },
+  "windowing": {
+    "duration_seconds": 15,
+    "stride_seconds": 15,
+    "prepared_sampling_rate_hz": 125,
+    "maximum_windows_per_case": 20,
+    "selection_within_case": "evenly spaced over all QC-passing windows"
+  },
+  "quality_control": {
+    "minimum_ppg_finite_fraction": 0.95,
+    "minimum_art_points_per_window_each_target": 5,
+    "sbp_range_mmHg": [55, 220],
+    "dbp_range_mmHg": [25, 130],
+    "minimum_pulse_pressure_mmHg": 10,
+    "maximum_within_window_sbp_iqr_mmHg": 20,
+    "maximum_within_window_dbp_iqr_mmHg": 15,
+    "ppg_pulse_band_hz": [0.5, 3.5],
+    "minimum_ppg_pulse_band_power_fraction": 0.25,
+    "accepted_pulse_count_per_15s": [6, 40]
+  },
+  "models": {
+    "primary": "fixed 15-member patient-separated MIMIC-BP ResNet ensemble (winner_10s)",
+    "secondary": "fixed 15-member frozen PaPaGei ensemble",
+    "model_selection_on_vitaldb": "forbidden"
+  },
+  "comparators": [
+    "MIMIC-BP training-population mean",
+    "destination-fold mean, reported only as supervised cross-fitted context"
+  ],
+  "primary_metrics": [
+    "patient-macro MAE SBP/DBP",
+    "patient-cluster bootstrap 95% CI",
+    "zero-shot bias and correlation",
+    "direct high-BP sensitivity and specificity",
+    "high-BP AUPRC and AUROC"
+  ],
+  "success_gate": "at least 80 patients and 800 synchronized QC-passing windows; this is a stress test and has no accuracy-promotion threshold",
+  "claim_limits": [
+    "No VitalDB result may be called prospective clinical validation",
+    "PaPaGei pretraining provenance must be considered before calling its representation strictly unseen",
+    "Cross-fitted destination calibration is supervised and must remain separate from zero-shot performance"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "parent_protocol": "MIMIC3_AUX_PROTOCOL_LOCK.json",
+  "version": "1.1.0-addendum-1",
+  "date": "2026-08-21",
+  "status": "exploratory_methodological_addendum_locked_before_execution",
+  "reason": "The global-nonoverlap source policy excludes source recordings from target-training subjects even though these do not leak into target validation. A fold-safe policy can use them while still excluding every officially mapped target validation/test subject.",
+  "new_source_policy": {
+    "name": "fold_safe",
+    "include": "high_confidence AND official_unique",
+    "exclude": "all official subject_ids in fixed MIMIC-BP validation or test",
+    "mapping_unknown_included": false,
+    "target_train_subject_overlap_allowed": true,
+    "justification": "These subjects already belong exclusively to target train; no target validation/test subject enters auxiliary training."
+  },
+  "new_model": {
+    "name": "papagei_last_blocks",
+    "reason": "The frozen PaPaGei negative control cannot transfer auxiliary representation learning when its head is reset. Last-block adaptation permits genuine source-domain representation updates."
+  },
+  "models": ["resnet_multiview", "spectral_fusion", "papagei_last_blocks"],
+  "seeds": [42, 123, 2026],
+  "interpretation": "Exploratory until repeated patient-wise confirmation; compare paired scratch versus auxiliary pretraining and report all target-wise deltas."
+}

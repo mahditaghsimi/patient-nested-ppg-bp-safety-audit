@@ -1,0 +1,41 @@
+{
+  "locked_before_training": true,
+  "purpose": "Independent reproducibility check of the fixed primary PPG-to-BP model; not a new model-selection run",
+  "created_local_date": "2026-08-21",
+  "dataset": {
+    "name": "MIMIC-BP prepared cache",
+    "segments": 45689,
+    "subjects": 1524,
+    "ppg_cache_sha256": "fd1a264c19b07523485f08fe608c10c6abaf94d65ea5ed7cedcc26e14bb25e11",
+    "metadata_sha256": "3af019f0369ef7e8f99827cc181eb446989c7436180afe9274c8ae53c1977b26",
+    "feature_cache_sha256": "a688b1ab86006fceabe62dd76a4a4951eb01c5d760f3e650160281505a7b1dcb"
+  },
+  "split": {
+    "method": "five-fold patient-separated stratified cross-validation",
+    "seed": 314159,
+    "unit": "patient",
+    "outer_fold_epoch_selection": "forbidden; fixed five epochs"
+  },
+  "fixed_model": {
+    "backbone": "resnet",
+    "view": "multiview",
+    "duration_seconds": 10.0,
+    "engineered": "none",
+    "head": "multitask",
+    "loss": "multitask",
+    "augmentation": "jitter_scale",
+    "balance": "none",
+    "dropout": 0.15,
+    "head_hidden": 192,
+    "epochs": 5,
+    "batch_size": 192,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0002
+  },
+  "comparators": [
+    "training-fold population-mean SBP/DBP predictor",
+    "previous repeated-CV estimate for the same model family"
+  ],
+  "success_rule": "All five folds finish without patient overlap; OOF model MAE is lower than the training-fold population-mean baseline for both SBP and DBP; results remain directionally compatible with the prior 15-fit estimate.",
+  "reporting_rule": "This run is a reproducibility check and must not replace the prespecified repeated-CV primary result."
+}

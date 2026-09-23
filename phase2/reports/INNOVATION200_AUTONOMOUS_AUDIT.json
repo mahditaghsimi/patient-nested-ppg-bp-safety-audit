@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-09-11T13:12:24.313938+00:00",
+  "status": "PASS",
+  "protocol": {
+    "search_lock_sha256": "5aaa61d6f5275c9dd3c5ccd7db5c077aafc308bd8366c651aba06fd3462253fd",
+    "methods": 200,
+    "unique_run_ids": 200
+  },
+  "screening": {
+    "rows": 200,
+    "ok": 200,
+    "authoritative_locked_reference_mean_mae": 10.844049453735352,
+    "post_lock_reference_replay_matches_locked_hash": false,
+    "reference_replay_policy": "The immutable confirmation lock is authoritative; a later nonmatching replay is ignored."
+  },
+  "confirmation": {
+    "fits": 75,
+    "expected": 75,
+    "patient_overlap_max": 0,
+    "checkpoints": 75
+  },
+  "decision": {
+    "status": "NO_CONFIRMED_IMPROVEMENT",
+    "winner_id": "PRIOR_WINNER_FIXED",
+    "external_candidate_id": "PRIOR_WINNER_FIXED"
+  },
+  "external": {
+    "status": "PASS",
+    "patients": 119,
+    "windows": 2380
+  },
+  "artifacts": {
+    "report": "phase2/reports/INNOVATION200_FINAL_RESULTS_FA.md",
+    "report_sha256": "b4ed0a1f3e5a221989985b1019923e80a147e55f489be82043e2c244304f5e5d",
+    "screening_results_sha256": "cbaacce89636bdac3d5debc46bdadea9459ffe1d80bdf6e12cb528c74296d5af",
+    "confirmation_decision_sha256": "d2a8e97f6618379436f0b7e61f3fbaba97f7e763115761588279183e6540d56a",
+    "event_safety_sha256": "09225e3c85babbcf2644b82304adc58aaa2b369b28163390fac7110a8b940eb7",
+    "fold_mean_baseline_sha256": "a96e0acce49dea48f24c42a1212abef8286a1b2da7a02e7f8eb3d6feb32dcdec",
+    "external_decision_sha256": "9c3f5b9ca1dff7bf20f484cc1b3cc4b113dc205ff2f69be686d0b9c40a43103d"
+  }
+}
